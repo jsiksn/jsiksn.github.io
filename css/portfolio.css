@@ -124,7 +124,7 @@ header {
   padding: 2.5rem 0 2rem 2.5rem;
   box-sizing: border-box;
   font-weight: 700;
-  z-index: 100;
+  z-index: 10;
   /* nav */
 }
 header h1 {
@@ -560,7 +560,7 @@ header .btn-mobile {
 
 /* skills */
 /* main */
-/* top */
+/* go-to-top */
 .go-to-top {
   display: none;
   position: fixed;
@@ -584,6 +584,24 @@ header .btn-mobile {
 
 .go-to-top.active {
   display: block;
+}
+
+/* cursor */
+.cursor {
+  position: absolute;
+  transform: translate(100%, 100%);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #808080;
+  border-radius: 50%;
+  opacity: 0.4;
+  transition: all 0.3s ease-out;
+  z-index: 1000;
+}
+.cursor.on {
+  border: 2px solid #222;
+  background: #222;
+  opacity: 1;
 }
 
 /* media 1700px */
