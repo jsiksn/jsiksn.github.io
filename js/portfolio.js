@@ -73,10 +73,11 @@ $(document).ready(function(){
   });
   $('.slider-projects .slick-dots').css('display','');
 
-  $('.project-portfolio').click(function(e){
+  // portfolio click
+  /* $('.project-portfolio').click(function(e){
     e.preventDefault();
     alert('현재 페이지입니다.');
-  });
+  }); */
   
   // slider-work
   $('.slider-work').bxSlider({

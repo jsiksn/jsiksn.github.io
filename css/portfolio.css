@@ -440,14 +440,14 @@ header .btn-mobile {
 }
 .skills h2 {
   margin-right: -2rem;
-  padding-bottom: 17vh;
+  padding-bottom: 15vh;
   text-align: right;
 }
 .skills ul {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 3.5vh 2rem;
+  gap: 2.5vh 2rem;
 }
 .skills ul li {
   aspect-ratio: 1/1;
