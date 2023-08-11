@@ -586,24 +586,6 @@ header .btn-mobile {
   display: block;
 }
 
-/* cursor */
-.cursor {
-  position: absolute;
-  transform: translate(100%, 100%);
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid #808080;
-  border-radius: 50%;
-  opacity: 0.4;
-  transition: all 0.3s ease-out;
-  z-index: 1000;
-}
-.cursor.on {
-  border: 2px solid #222;
-  background: #222;
-  opacity: 1;
-}
-
 /* media 1700px */
 @media screen and (max-width: 1700px) {
   header {

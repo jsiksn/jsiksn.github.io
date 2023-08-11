@@ -102,15 +102,6 @@ $(document).ready(function(){
     }
   });
 
-  // cursor
-  $(window).on('scroll mousemove', function(e){
-    $('.cursor').css('left', e.pageX + 'px');
-    $('.cursor').css('top', e.pageY + 'px');
-  });
-  $('a').hover(function(){
-    $('.cursor').toggleClass('on');
-  });
-
   // resize
   $(window).resize(function(){
     // header
