@@ -3,7 +3,8 @@ $(document).ready(function(){
   // fullPage
   $('#fullpage').fullpage({
     verticalCentered: false,
-    responsiveWidth: 1441
+    responsiveWidth: 1441,
+    bigSectionsDestination: top
   });
 
   // scroll disable on mobile
