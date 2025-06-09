@@ -1,0 +1,65 @@
+.banner-tit{
+  background: rgba(0, 0, 0, 0.5) url(../image/main/bg_staryard_about_03.png) no-repeat center center/cover; }
+.ent-food{
+  width: 100%;
+}
+.ent{
+  padding: 8rem 0 0;
+}
+.ent .en-tit{
+  font-size: 2rem;
+  font-weight: 700;
+}
+.ent-wrap{
+  gap: 2rem;
+  padding: 2rem 0 9rem;
+}
+.ent-info{
+  width: 100%;
+}
+.ent-info a{
+  width: 100%;
+  aspect-ratio: 1/1; 
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  transition: all .5s;
+}
+.ent-info:hover a{
+  transform: rotateY(180deg);
+}
+.ent-info img{
+  position: absolute;
+  width: 100%; height: 100%;
+  backface-visibility: hidden;
+}
+.ent-info .front{
+  z-index: 1; 
+}
+.ent-info .back{
+  transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 1023px) {
+  .ent-wrap{
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ent-wrap{
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+  .ent-info{
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .banner-tit h2{
+    bottom: 25%;
+    font-size: 1.8rem;
+  }
+}

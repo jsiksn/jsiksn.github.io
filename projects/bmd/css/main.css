@@ -1,0 +1,225 @@
+header,
+.gnb-sub-bg{
+  background: none;
+}
+header.scroll,
+header.scroll .gnb-sub-bg{
+  background: var(--primary01);
+}
+.search-inp{
+  background: rgba(255, 255, 255, .2);
+}
+header.scroll .search-inp{
+  background: var(--primary02);
+}
+.slider-main{
+  position: relative;
+  color: #fff;
+}
+.slider-main .slick-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem; height: 2rem;
+  text-indent: -9999px;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+  transition: all .3s;
+}
+.slider-main:hover .slick-arrow{
+  opacity: .6;
+}
+.slider-main .slick-prev{
+  left: 5rem;
+  background: url(../image/icon/arrow_slider_prev.png) no-repeat center center/contain;
+}
+.slider-main .slick-next{
+  right: 5rem;
+  background: url(../image/icon/arrow_slider_next.png) no-repeat center center/contain;
+}
+.slider-main .slick-dots{
+  display: none;
+  gap: 1rem;
+  position: absolute;
+  left: 50%; bottom: 2rem;
+  transform: translateX(-50%);
+}
+.slider-main .slick-dots li{
+  width: .5rem; height: .5rem;
+  border-radius: 50%;
+  background: #fff;
+  text-indent: -9999px;
+  overflow: hidden;
+  opacity: .5;
+}
+.slider-main .slick-dots li.slick-active{
+  opacity: 1;
+}
+.slider-main .slick-slide{
+  position: relative;
+}
+.slider-main img{
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+.slider-main .txt-wrap{
+  position: absolute;
+  left: 50%; bottom: 25%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.slider-main h2{
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.2rem;
+}
+.slider-main h2::after{
+  content: "";
+  display: block;
+  width: calc(100% - 1.2rem); height: 4px;
+  margin-top: 0.4rem;
+  border-radius: 1px;
+  background: #fff;
+}
+.slider-main a{
+  font-size: .8rem;
+}
+.slider-main a::after{
+  content: "";
+  display: inline-block;
+  width: .8rem; height: .8rem;
+  margin-left: .5rem;
+  background: url(../image/icon/arrow_link.png) no-repeat center center/contain;
+  vertical-align: -.1rem;
+}
+.intro{
+  flex-direction: column;
+  padding: 9rem 0;
+}
+.intro .kr-par{
+  color: var(--gray01);
+}
+.banner{
+  width: 100%;
+  background: url(../image/banner/banner_lecture.jpg) no-repeat center center/cover;
+}
+.banner h2{
+  padding: 6.2rem 0;
+  font-size: 2.6rem;
+  color: #fff;
+}
+.banner br{
+  display: none;
+}
+.banner h2::after{
+  content: "";
+  display: inline-block;
+  width: 1.6rem; height: 1.6rem;
+  margin-left: .5rem;
+  background: url(../image/icon/arrow_link.png) no-repeat center center/contain;
+  vertical-align: .2rem;
+}
+.book-rec{
+  padding: 6rem 0;
+  background: var(--primary02);
+  color: #fff;
+}
+.book-rec .title::before,
+.book-rec .title::after{
+  background: var(--secondary02);
+}
+.book-rec .title h2{
+  color: var(--secondary02);
+}
+.book-rec .content{
+  width: calc((100% - 2rem * 3) / 4);
+}
+.book-rec .content img{
+  aspect-ratio: 1 / 1.3;
+}
+.book-rec .kr-tit-s{
+  padding: 2rem 0 .5rem;
+  text-align: center;
+  color: var(--secondary02);
+}
+.book-rec .kr-par-s{
+  display: none;
+  /* display: -webkit-box; */
+  word-break: keep-all;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.slider-book-rec{
+  position: relative;
+  overflow: hidden;
+}
+.slider-book-rec .slick-list{
+  margin: 0 -1rem;
+}
+.slider-book-rec .slick-slide{
+  margin: 0 1rem;
+}
+.slider-book-rec .slick-arrow{
+  position: absolute;
+  top: 40%;
+  width: 2rem; height: 2rem;
+  border-radius: 50%;
+  text-indent: -9999px;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+  transition: all .3s;
+}
+.slider-book-rec:hover .slick-arrow{
+  opacity: .6;
+}
+.slider-book-rec .slick-prev{
+  left: 1rem;
+  background: #fff url(../image/icon/arrow_slider_prev_dark.png) no-repeat center center/1rem auto;
+}
+.slider-book-rec .slick-next{
+  right: 1rem;
+  background: #fff url(../image/icon/arrow_slider_next_dark.png) no-repeat center center/1rem auto;
+}
+@media screen and (max-width: 1400px) {
+  .slider-main .slick-prev{
+    left: 16px;
+  }
+  .slider-main .slick-next{
+    right: 16px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .slider-main .slick-dots{
+    display: flex;
+  }
+  .intro{
+    padding: 6rem 0;
+  }
+  .banner h2{
+    padding: 3rem 0;
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+  .banner br{
+    display: block;
+  }
+  .slider-book-rec .slick-list{
+    margin: 0 -.5rem;
+  }
+  .slider-book-rec .slick-slide{
+    margin: 0 .5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .slider-main img{
+    height: 70vh;
+  }
+  .banner h2{
+    font-size: 2rem;
+  }
+}

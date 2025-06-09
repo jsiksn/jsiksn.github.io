@@ -1,0 +1,65 @@
+main section{
+  padding-top: 6rem; 
+}
+.banner-tit{
+  background: rgba(0, 0, 0, 0.5) url(../image/main/main_01.jpg) no-repeat center center/cover;
+}
+.car,
+.public{
+  flex-direction: column;
+}
+.car em,
+.public em{
+  font-weight: 700;
+  text-align-last: left;
+  color: var(--secondary01);
+}
+.car{
+  margin-top: 2rem;
+}
+.public .kr-par{
+  width: 100%;
+}
+.public .kr-par > div{
+  align-items: flex-start;
+}
+.public .kr-par > div ~ div{
+  padding-top: 3rem;
+}
+.public dl{
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  width: 75%;
+}
+.public dt{
+  margin: 0 .4rem 0 1.2rem;
+  font-weight: 700;
+}
+.map{
+  width: 100%;
+  margin-top: 6rem;
+  padding-bottom: 8rem;
+  background: var(--primary02);
+}
+.map-google{
+  height: 28rem;
+}
+.map-google iframe{
+  border-radius: .4rem;
+}
+@media screen and (max-width: 767px) {
+  .public dl{
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+@media screen and (max-width: 599px) {
+  .public dl div{
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .public dt{
+  margin-right: 0;
+  font-weight: 700;
+  }
+}
