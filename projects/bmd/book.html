@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"><!-- 사파리 전화번호 인식 차단 -->
+  <title>별마당 도서관</title>
+
+  <link rel="icon" href="image/favicon.png">
+  
+  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/book.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/book.js"></script>
+</head>
+<body>
+  <header class="flex">
+    <div class="header-wrap-logo w1400">
+      <h1 class="m0auto"><a href="index.html">
+        <img src="image/logo/logo_bmd_w.png" alt="별마당">
+      </a></h1>
+    </div>
+    <div class="header-wrap-menu w1400">
+      <nav>
+        <ul class="gnb flex en-par">
+          <li><a href="about.html">ABOUT</a>
+            <ul class="gnb-sub">
+              <li>
+                <a href="about.html">
+                  <span>ABOUT</span><span class="kr-gnb">&nbsp; 별마당</span>
+                </a>
+              </li>
+              <li><a href="location.html">LOCATION</a></li>
+            </ul>
+          </li>
+          <li><a href="book.html">BOOK</a></li>
+          <li><a href="culture.html">CULTURE</a></li>
+          <li><a href="ent.html">ENTERTAINMENT</a></li>
+        </ul>
+      </nav>
+      <div class="util-wrap flex">
+        <input type="text" placeholder="검색어 입력" class="search-inp bd04">
+        <button type="button" class="search-btn">
+          <img src="image/icon/icon_search.png" alt="검색">
+        </button>
+        <button type="button" class="mb-menu-btn">
+          <img src="image/icon/m_btn_dark.png" alt="메뉴보기">
+        </button>
+      </div>
+    </div>
+    </div>
+    <div class="gnb-sub-bg"></div>
+  </header>
+  <main>
+    <div class="banner-tit">
+      <h2 class="en-tit">BOOK</h2>
+    </div>
+    <section class="book-rec">
+      <div class="w1400 m0auto">
+        <div class="title flex">
+          <h2 class="kr-tit">추천 도서</h2>
+        </div>
+        <div class="slider-book-rec">
+          <div class="content">
+            <img src="image/book/rec01.jpg" alt="제주 여행 참견" class="bd04">
+            <h3 class="kr-tit-s">제주 여행 참견</h3>
+            <p class="kr-par-s">『하루쯤 나 혼자 어디라도 가야겠다』,『나 홀로 제주』를 쓴 13년 차 여행 전문 작가 장은정의 2023년 최신 제주 여행 가이드북.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/rec02.jpg" alt="100가지 동물로 읽는 세계사" class="bd04">
+            <h3 class="kr-tit-s">100가지 동물로 읽는 세계사</h3>
+            <p class="kr-par-s">역사 속에서 소외된 동물들을 다시 소환하다.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/rec03.jpg" alt="구름관찰자를 위한 가이드" class="bd04">
+            <h3 class="kr-tit-s">구름관찰자를 위한 가이드</h3>
+            <p class="kr-par-s">만약 칼 세이건이 구름을 연구하는 기상학자였다면 『코스모스』 대신 바로 이 책을 썼을 것이다.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/rec04.jpg" alt="꿀잠의 과학" class="bd04">
+            <h3 class="kr-tit-s">꿀잠의 과학</h3>
+            <p class="kr-par-s">대한민국은 ‘잠 부족’ 국가다. 젊은 시절에는 잠을 줄인 채 공부와 일로 내몰리다가, 나이가 들면 자고 싶어도 잠을 못 자는 불면증에 시달린다. 잠을 줄여야 성공한다는 뿌리 깊은 사회적 인식 속에서 학업과 일에 몰두해 자신을 소진하는 일상을 바꾸지 못한다면 만성 수면부족에서 벗어날 수 없다.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/rec05.jpg" alt="오십에 읽는 순자" class="bd04">
+            <h3 class="kr-tit-s">오십에 읽는 순자</h3>
+            <p class="kr-par-s">중국 전국 시대 말, 순자는 전쟁이 거듭되고 진시황이 통일 국가를 세우려는 격변의 상황에서 국가 번영을 위한 현실적인 통치 이념과 방식을 제시한다. 현재 ‘오십’이 직면한 상황은 전국 시대와 비슷하다. 급작스럽게 환경이 변해 기존에 믿었던 가치와 기준이 더 이상 통용되지 않고, 새로운 목적지를 정해 도달해야 한다. 『순자』는 “푸른 물감은 쪽풀에서 취하지만 쪽풀보다 더 푸르고, 얼음은 물로 이루어졌지만 물보다 더 차갑다”라는 ‘청출어람(靑出於藍)’의 문장으로 시작한다. 이를 오십의 삶에 비유하면 ‘지난 50년을 기반으로 지난날보다 더 멋지고 행복한 50년을 살 수 있다’로 풀이할 수 있다. 이 책은 지난 50년에서 앞으로의 원동력을 얻을 수 있는 방법을 제시한다.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/rec06.jpg" alt="끝없는 우주 이야기" class="bd04">
+            <h3 class="kr-tit-s">끝없는 우주 이야기</h3>
+            <p class="kr-par-s">우주에는 시간의 비밀과 모든 것이 시작된 순간이 새겨져 있어.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/rec07.jpg" alt="리얼 몽골" class="bd04">
+            <h3 class="kr-tit-s">리얼 몽골</h3>
+            <p class="kr-par-s">『오염되지 않은 대자연의 나라, 몽골에서 자연에 닮아가는 여행을 하다.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/rec08.jpg" alt="우리 동네 꾹꾹 도사" class="bd04">
+            <h3 class="kr-tit-s">우리 동네 꾹꾹 도사</h3>
+            <p class="kr-par-s">마음이 작아지는 순간, 스스로 헤쳐 나갈 힘을 주는 이야기<br>
+            “우리 동네 뒷산에는 도술을 부리는 고양이가 산대요. 내 고민도 해결해 줄까요?”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="book-new">
+      <div class="w1400 m0auto">
+        <div class="title flex">
+          <h2 class="kr-tit">신작 도서</h2>
+        </div>
+        <div class="slider-book-rec">
+          <div class="content">
+            <img src="image/book/new01.jpg" alt="아주아주 특별한 놀이터" class="bd04">
+            <h3 class="kr-tit-s">아주아주 특별한 놀이터</h3>
+            <p class="kr-par-s">세상 어디에도 없는 특별한 놀이터가 있다. 아빠의 긴 다리를 타고 신나게 미끄러지는 곳, 아빠의 튼튼한 팔뚝에 대롱대롱 매달릴 수 있는 곳, 엄마의 푹신한 엉덩이 위에서 포근하게 앉을 수 있는 곳, 엄마의 발바닥에 배를 대고 아주 높은 곳까지 비행할 수 있는 곳. 바로 ‘아주아주 특별한 놀이터’, 우리 집이다.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/new02.jpg" alt="이건 내 스웨터야!" class="bd04">
+            <h3 class="kr-tit-s">이건 내 스웨터야!</h3>
+            <p class="kr-par-s">공유하는 법을 배우는 것도 성장의 중요한 과정임을 보여 주는 이야기 아이의 마음 성장통을 어루만져 주는 이야기 《이건 내 스웨터야!》는 가장 아끼던 스웨터를 동생에게 물려주는 올리비아의 이야기입니다.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/new03.jpg" alt="인간과 동물의 일곱 가지 감각 이야기" class="bd04">
+            <h3 class="kr-tit-s">인간과 동물의 일곱 가지 감각 이야기</h3>
+            <p class="kr-par-s">인간과 동물이 세상을 느끼는 감각에 대하여 소개합니다. 감각은 우리가 현실을 관찰하고 이해하는 도구이자 살아있음을 느끼게 하는 역할을 합니다. 이 도서는 감각들이 정보를 받아들이고, 신호로 바뀐 정보가 신경을 통해 뇌로 전달되고 우리가 알게 되기까지의 내용을 설명해줍니다.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/new04.jpg" alt="뇌 과학 나라의 앨리스" class="bd04">
+            <h3 class="kr-tit-s">뇌 과학 나라의 앨리스</h3>
+            <p class="kr-par-s">우리 뇌는 어떻게 일할까? 뇌에게 직접 들어 보자! “내 아이들에게 권할 뇌 과학 책이 생겨서 매우 기쁘다.” _장동선(뇌 과학자, 한양대학교 창의융합교육원 교수, ‘궁금한뇌연구소’ 대표) 2017 폴란드 지혜로운 어린이책 선정 도서 출간 즉시 폴란드 베스트셀러! 전 세계 6개국 판권 판매! 우리가 느끼고, 생각하고, 말하고, 보는 것, 결정을 내릴 수 있는 것, 우리가 우리인 것은 모두 뇌로 인해서다. 이런 뇌가 우리에게 자신이 하는 일을 직접 알려 준다!</p>
+          </div>
+          <div class="content">
+            <img src="image/book/new05.jpg" alt="의학아 고마워!" class="bd04">
+            <h3 class="kr-tit-s">의학아 고마워!</h3>
+            <p class="kr-par-s">‘열두 살 궁그미를 위한 인문 교양’ 시리즈는 생각이 자라고 질문이 늘어나는 초등 궁그미들을 위해 인문 분야의 다양한 주제와 내용을 다루는 시리즈로 기획되었습니다. 정치, 철학, 의학 등의 주제를 통해 어린이들은 인류의 사상과 문화를 만나고, 세상을 살아가는 데 필요한 지식을 얻으며 궁금증을 해결할 수 있습니다. 또한, 풍부하게 수록된 재미있는 그림은 인문학적 개념들을 적절하게 표현하여 내용의 이해를 도와줍니다.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/new06.jpg" alt="니나 시몬, 희망을 노래하다" class="bd04">
+            <h3 class="kr-tit-s">니나 시몬, 희망을 노래하다</h3>
+            <p class="kr-par-s">2022 코레타 스콧 킹 아너 상 수상작 천재 피아니스트에서 흑인 민권 운동가가 되기까지! 니나 시몬 탄생 90년, 사후 20주기를 기리는 그림책 유니스는 몸속에 음악을 지니고 태어났어요. 세 살 때부터 교회에서 피아노 반주를 할 정도로 천재였지요!</p>
+          </div>
+          <div class="content">
+            <img src="image/book/new07.jpg" alt="감옥에 갇히면" class="bd04">
+            <h3 class="kr-tit-s">감옥에 갇히면</h3>
+            <p class="kr-par-s">“아무것도 할 수 없다고? 아냐, 넌 무엇이든 할 수 있어.” 말이 감옥이 된 세상, 언어폭력의 굴레를 벗어날 용기와 연대의 이야기 ‘네가 뭘 할 수 있겠어?’, ‘넌 어려서 아무것도 할 수 없어!’, ‘꿈도 꾸지 마!’ 부정적이고 공격적인 말은 화살이 되어 상처를 남기기도 하지만 지속적인 언어폭력은 단단한 쇠창살이 되어 몸과 마음을 가둬요.</p>
+          </div>
+          <div class="content">
+            <img src="image/book/new08.jpg" alt="나나와 키키의 숨겨진 문" class="bd04">
+            <h3 class="kr-tit-s">나나와 키키의 숨겨진 문</h3>
+            <p class="kr-par-s">아이들을 삼키고, 가두고, 자르는 조금 이상한 어른들이 사는 마을. 그곳에서 펼쳐지는 환상적인 이야기! 용기 있게 자기만의 문을 찾아 나선 나나와 키키의 판타지 성장 동화! 보랏빛소 책 읽는 교실 16번째 시리즈,《나나와 키키의 숨겨진 문》은 엄마 배 속에 갇힌 언니를 위해 감추어진 문을 찾아 나서는 소녀들, 나나와 키키의 이야기입니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-wrap w1400 m0auto">
+      <p class="footer-logo"><span class="blind">스타필드 코엑스몰</span></p>
+      <address>
+        <p>서울시 강남구 영동대로 513(삼성동)</p>
+        <dl class="company-link flex">
+          <div class="flex">
+            <dt>회사소개</dt>
+            <dd><a href="https://www.shinsegaeproperty.com/" target="_blank">신세계 프라퍼티</a></dd>
+          </div>
+          <div class="flex">
+            <dt>협력사 상담</dt>
+            <dd><a href="https://sps.starfield.co.kr/sps/common/main.do" target="_blank">상담신청 및 입점 안내</a></dd>
+          </div>
+          <div class="flex">
+            <dt>대표전화</dt>
+            <dd><a href="tel:02-6002-5300"></a>02-6002-5300</dd>
+          </div>
+        </dl>
+      </address>
+      <ul class="privacy flex">
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+        <li><a href="#">영상정보처리기기 운영관리 방침</a></li>
+      </ul>
+      <p class="copy">Copyright ⓒ 2017 STARFIELD COEXMALL. All Rights Reserved</p>
+      <div class="sns-wrap flex">
+        <p class="sns-icon insta"><a href="#">
+          <img src="image/icon/icon_insta.png" alt="인스타그램" class="front">
+          <img src="image/icon/icon_insta_hover.png" alt="인스타그램" class="back">
+        </a></p>
+        <p class="sns-icon face"><a href="#">
+          <img src="image/icon/icon_face.png" alt="페이스북" class="front">
+          <img src="image/icon/icon_face_hover.png" alt="페이스북" class="back">
+        </a></p>
+        <p class="sns-icon yout"><a href="#">
+          <img src="image/icon/icon_yout.png" alt="유튜브" class="front">
+          <img src="image/icon/icon_yout_hover.png" alt="유튜브" class="back">
+        </a></p>
+      </div>
+    </div>
+    <div class="go-top en-par bd04">
+      <a href="#" class="flex">
+        <p>TOP</p>
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

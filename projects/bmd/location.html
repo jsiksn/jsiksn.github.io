@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"><!-- 사파리 전화번호 인식 차단 -->
+  <title>별마당 도서관</title>
+
+  <link rel="icon" href="image/favicon.png">
+  
+  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/location.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/common.js"></script>
+</head>
+<body>
+  <header class="flex">
+    <div class="header-wrap-logo w1400">
+      <h1 class="m0auto"><a href="index.html">
+        <img src="image/logo/logo_bmd_w.png" alt="별마당">
+      </a></h1>
+    </div>
+    <div class="header-wrap-menu w1400">
+      <nav>
+        <ul class="gnb flex en-par">
+          <li><a href="about.html">ABOUT</a>
+            <ul class="gnb-sub">
+              <li>
+                <a href="about.html">
+                  <span>ABOUT</span><span class="kr-gnb">&nbsp; 별마당</span>
+                </a>
+              </li>
+              <li><a href="location.html">LOCATION</a></li>
+            </ul>
+          </li>
+          <li><a href="book.html">BOOK</a></li>
+          <li><a href="culture.html">CULTURE</a></li>
+          <li><a href="ent.html">ENTERTAINMENT</a></li>
+        </ul>
+      </nav>
+      <div class="util-wrap flex">
+        <input type="text" placeholder="검색어 입력" class="search-inp bd04">
+        <button type="button" class="search-btn">
+          <img src="image/icon/icon_search.png" alt="검색">
+        </button>
+        <button type="button" class="mb-menu-btn">
+          <img src="image/icon/m_btn_dark.png" alt="메뉴보기">
+        </button>
+      </div>
+    </div>
+    </div>
+    <div class="gnb-sub-bg"></div>
+  </header>
+  <main>
+    <div class="banner-tit">
+      <h2 class="en-tit">LOCATION</h2>
+    </div>
+    <section class="car w1400 m0auto flex">
+      <div class="title flex">
+        <h2 class="kr-tit">네비게이션 이용시</h2>
+      </div>
+      <div class="kr-par">
+          <em>주소</em>
+          <p>서울특별시 강남구 영동대로 513 스타필드 코엑스몰 B1</p>
+      </div>
+    </section>
+    <section class="public w1400 m0auto flex">
+      <div class="title flex">
+        <h2 class="kr-tit">대중교통 이용시</h2>
+      </div>
+      <div class="kr-par">
+        <div class="flex">
+          <em>지하철</em>
+          <dl class="flex">
+            <div class="flex">
+              <dt>2호선</dt>
+              <dd>삼성역 5·6번 출구</dd>
+            </div>
+            <div class="flex">
+              <dt>9호선</dt>
+              <dd>봉은사역 1·6·7번 출구</dd>
+            </div>
+            <div class="flex">
+              <dt>7호선</dt>
+              <dd>청담역 2번 출구</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="flex">
+          <em>버스<br>코엑스 동문 앞</em>
+          <dl class="flex">
+            <div class="flex">
+              <dt>간선버스</dt>
+              <dd>146, 301, 401, 342, 362, N61(심야)</dd>
+            </div>
+            <div class="flex">
+              <dt>지선버스</dt>
+              <dd>2415, 3217, 3411, 3412, 3414, 4318</dd>
+            </div>
+            <div class="flex">
+              <dt>간선버스</dt>
+              <dd>9407, 9414, 9507, 9607, 500-2</dd>
+            </div>
+            <div class="flex">
+              <dt>공항리무진</dt>
+              <dd>6006</dd>
+            </div>
+            <div class="flex">
+              <dt>마을버스</dt>
+              <dd>강남08</dd>
+            </div>
+          </dl>    
+        </div>
+        <div class="flex">
+          <em>버스<br>봉은사 건너편</em>
+          <dl class="flex">
+            <div class="flex">
+              <dt>간선버스</dt>
+              <dd>342</dd>
+            </div>
+            <div class="flex">
+              <dt>지선버스</dt>
+              <dd>3411, 3412</dd>
+            </div>
+            <div class="flex">
+              <dt>간선버스</dt>
+              <dd>500-2</dd>
+            </div>
+            <div class="flex">
+              <dt>공항리무진</dt>
+              <dd>강남심야노선</dd>
+            </div>
+          </dl>
+        </div>
+      </div> <!-- kr-par -->
+    </section>
+    <section class="map">
+      <h2 class="blind">지도</h2>
+      <div class="map-google w1400 m0auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.911463589792!2d127.05740217636979!3d37.51000627205334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca415daa091bb%3A0x2b9e455aec4db397!2z67OE66eI64u5IOuPhOyEnOq0gA!5e0!3m2!1sko!2skr!4v1688348985152!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-wrap w1400 m0auto">
+      <p class="footer-logo"><span class="blind">스타필드 코엑스몰</span></p>
+      <address>
+        <p>서울시 강남구 영동대로 513(삼성동)</p>
+        <dl class="company-link flex">
+          <div class="flex">
+            <dt>회사소개</dt>
+            <dd><a href="https://www.shinsegaeproperty.com/" target="_blank">신세계 프라퍼티</a></dd>
+          </div>
+          <div class="flex">
+            <dt>협력사 상담</dt>
+            <dd><a href="https://sps.starfield.co.kr/sps/common/main.do" target="_blank">상담신청 및 입점 안내</a></dd>
+          </div>
+          <div class="flex">
+            <dt>대표전화</dt>
+            <dd><a href="tel:02-6002-5300"></a>02-6002-5300</dd>
+          </div>
+        </dl>
+      </address>
+      <ul class="privacy flex">
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+        <li><a href="#">영상정보처리기기 운영관리 방침</a></li>
+      </ul>
+      <p class="copy">Copyright ⓒ 2017 STARFIELD COEXMALL. All Rights Reserved</p>
+      <div class="sns-wrap flex">
+        <p class="sns-icon insta"><a href="#">
+          <img src="image/icon/icon_insta.png" alt="인스타그램" class="front">
+          <img src="image/icon/icon_insta_hover.png" alt="인스타그램" class="back">
+        </a></p>
+        <p class="sns-icon face"><a href="#">
+          <img src="image/icon/icon_face.png" alt="페이스북" class="front">
+          <img src="image/icon/icon_face_hover.png" alt="페이스북" class="back">
+        </a></p>
+        <p class="sns-icon yout"><a href="#">
+          <img src="image/icon/icon_yout.png" alt="유튜브" class="front">
+          <img src="image/icon/icon_yout_hover.png" alt="유튜브" class="back">
+        </a></p>
+      </div>
+    </div>
+    <div class="go-top en-par bd04">
+      <a href="#" class="flex">
+        <p>TOP</p>
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

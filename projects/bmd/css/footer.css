@@ -1,0 +1,135 @@
+footer{
+  background: var(--primary01);
+  font-size: .7rem;
+  line-height: 1.2rem;
+  color: var(--gray02);
+}
+.footer-wrap{
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding: 2rem 0 3rem;
+}
+.footer-logo{
+  width: 4.5rem; height: 2.45rem;
+  background: url(../image/logo/logo_starfield_w.png) no-repeat center center/contain;
+}
+address{
+  margin: 1.1rem 0 2.5rem;
+}
+.company-link,
+.privacy{
+  justify-content: flex-start;
+}
+.company-link{
+  flex-wrap: wrap;
+  margin-top: .5rem;
+}
+.company-link dt{
+  margin-right: .4rem;
+  font-weight: 700;
+  color: var(--secondary02);
+}
+.company-link div ~ div::before,
+.privacy li ~ li a::before{
+  content: "";
+  display: inline-block;
+  width: 1px; height: 0.55rem;
+  margin: 0 1rem;
+  background: var(--gray01);
+}
+.privacy strong{
+  color: var(--secondary02);
+}
+.copy{
+  margin-top: .5rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: .6rem;
+  color: var(--gray02);
+}
+.sns-wrap{
+  position: absolute;
+  right: 0; top: 2rem;
+}
+.sns-icon{
+  position: relative;
+}
+.sns-icon a{
+  width: 1.6rem; height: 1.6rem;
+  margin-left: 1rem;
+  transform-style: preserve-3d;
+  transition: all .3s;
+}
+.sns-icon:hover a{
+  transform: rotateY(180deg);
+}
+.sns-icon img{
+  position: absolute;
+  width: 100%; height: 100%;
+  backface-visibility: hidden;
+}
+.sns-icon .front{
+  background: var(--primary01);
+  z-index: 1;
+}
+.sns-icon .back{
+  transform: rotateY(180deg);
+}
+.go-top{
+  display: none;
+  position: fixed;
+  bottom: 3rem; right: 24px;
+  background: var(--primary02);
+  border: 1px solid var(--gray01);
+  box-sizing: border-box;
+  font-size: .6rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+}
+.go-top.active{
+  display: block;
+}
+.go-top:hover{
+  background: var(--primary01);
+}
+.go-top a{
+  flex-direction: column;
+  width: 2.5rem; height: 2.5rem;
+}
+.go-top a::before{
+  content: "";
+  display: block;
+  width: .8rem; height: .8rem;
+  margin-top: .35rem;
+  background: url(../image/icon/arrow_link.png) no-repeat center center/contain;
+  transform: rotate(-90deg);
+}
+@media screen and (max-width: 767px) {
+  footer{
+    font-size: .8rem;
+    line-height: 1.3rem;
+  }
+  .sns-icon a{
+    width: 2rem; height: 2rem;
+  }
+}
+@media screen and (max-width: 639px) {
+  .company-link{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .3rem;
+    margin-top: 1rem;
+  }
+  .company-link div ~ div::before{
+    display: none;
+  }
+  .privacy{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .3rem;
+  }
+  .privacy li ~ li a::before{
+    display: none;
+  }
+}
