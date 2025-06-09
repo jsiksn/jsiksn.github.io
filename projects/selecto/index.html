@@ -1,335 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no"><!-- 사파리 전화번호 인식 차단 -->
-  <title>SELECTO COFFEE</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="css/reset_css.css">
-  <link rel="stylesheet" href="css/selecto.css">
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="js/selecto.js"></script>
-</head>
-<body>
-  <header>
-    <section class="header-wrap flex">
-      <h1><a href="#"><img src="image/logo.png" alt="selecto"></a></h1>
-      <nav>
-        <div class="mobile-menu-close">
-          <img src="image/icon/X@2x.png" alt="메뉴닫기">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 사파리 전화번호 인식 차단 -->
+    <title>SELECTO COFFEE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/reset_css.css" />
+    <link rel="stylesheet" href="css/selecto.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/selecto.js"></script>
+  </head>
+  <body>
+    <header>
+      <section class="header-wrap flex">
+        <h1>
+          <a href="#"><img src="image/logo.png" alt="selecto" /></a>
+        </h1>
+        <nav>
+          <div class="mobile-menu-close">
+            <img src="image/icon/X@2x.png" alt="메뉴닫기" />
+          </div>
+          <ul class="gnb flex">
+            <li>
+              <a href="#">셀렉토커피</a>
+              <ul class="drop-menu">
+                <li><a href="#">브랜드 스토리</a></li>
+                <li><a href="#">HISTORY</a></li>
+                <li><a href="#">경쟁력</a></li>
+                <li><a href="#">ONE FOR ONE</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">메뉴</a>
+              <ul class="drop-menu">
+                <li><a href="#">Signature</a></li>
+                <li><a href="#">Coffee</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">Beverage</a></li>
+                <li><a href="#">Deli&Dessert</a></li>
+                <li><a href="#">MD</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">매장안내</a>
+              <ul class="drop-menu">
+                <li><a href="#">매장찾기</a></li>
+                <li><a href="#">오픈 예정 매장</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">WHAT'S NEW</a>
+              <ul class="drop-menu">
+                <li><a href="#">새로운 소식</a></li>
+                <li><a href="#">보도자료</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="drop-menu-bg"></div>
+          <div class="link-wrap flex">
+            <button><a href="#">창업안내</a></button>
+            <div class="sns-wrap flex">
+              <a href="#" class="sns"
+                ><img src="image/header/h-link-naver.svg" alt="naver"
+              /></a>
+              <a href="#" class="sns"
+                ><img src="image/header/h-link-youtube.svg" alt="youtube"
+              /></a>
+              <a href="#" class="sns"
+                ><img src="image/header/h-link-instagram.svg" alt="instagram"
+              /></a>
+            </div>
+          </div>
+        </nav>
+        <div class="mobile-menu-open">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <ul class="gnb flex">
-          <li><a href="#">셀렉토커피</a>
-            <ul class="drop-menu">
-              <li><a href="#">브랜드 스토리</a></li>
-              <li><a href="#">HISTORY</a></li>
-              <li><a href="#">경쟁력</a></li>
-              <li><a href="#">ONE FOR ONE</a></li>
-            </ul>
-          </li>
-          <li><a href="#">메뉴</a>
-            <ul class="drop-menu">
-              <li><a href="#">Signature</a></li>
-              <li><a href="#">Coffee</a></li>
-              <li><a href="#">Cookies</a></li>
-              <li><a href="#">Beverage</a></li>
-              <li><a href="#">Deli&Dessert</a></li>
-              <li><a href="#">MD</a></li>
-            </ul>
-          </li>
-          <li><a href="#">매장안내</a>
-            <ul class="drop-menu">
-              <li><a href="#">매장찾기</a></li>
-              <li><a href="#">오픈 예정 매장</a></li>
-            </ul>
-          </li>
-          <li><a href="#">WHAT'S NEW</a>
-            <ul class="drop-menu">
-              <li><a href="#">새로운 소식</a></li>
-              <li><a href="#">보도자료</a></li>
-            </ul>
-          </li>
-        </ul>
-        <div class="drop-menu-bg"></div>
-        <div class="link-wrap flex">
-          <button><a href="#">창업안내</a></button>
-          <div class="sns-wrap flex">
-            <a href="#" class="sns"><img src="image/header/h-link-naver.svg" alt="naver"></a>
-            <a href="#" class="sns"><img src="image/header/h-link-youtube.svg" alt="youtube"></a>
-            <a href="#" class="sns"><img src="image/header/h-link-instagram.svg" alt="instagram"></a>
+      </section>
+    </header>
+    <main>
+      <div class="blur"></div>
+      <section class="slider-main-wrap">
+        <h2 class="blind">메인슬라이더</h2>
+        <div class="slider-main">
+          <div>
+            <img
+              src="image/slider_main/20220926134050_tnadwv.jpg"
+              alt="슬라이더이미지"
+            />
+          </div>
+          <div>
+            <img
+              src="image/slider_main/20220926135834_w6aozi.jpg"
+              alt="슬라이더이미지"
+            />
+          </div>
+          <div>
+            <img
+              src="image/slider_main/20220927120542_4bli9f.jpg"
+              alt="슬라이더이미지"
+            />
+          </div>
+          <div>
+            <img
+              src="image/slider_main/20230522103214_jx4zus.jpg"
+              alt="슬라이더이미지"
+            />
           </div>
         </div>
-      </nav>
-      <div class="mobile-menu-open">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </section>
-  </header>
-  <main>
-    <div class="blur"></div>
-    <section class="slider-main-wrap">
-      <h2 class="blind">메인슬라이더</h2>
-      <div class="slider-main">
-        <div><img src="image/slider_main/20220926134050_tnadwv.jpg" alt="슬라이더이미지"></div>
-        <div><img src="image/slider_main/20220926135834_w6aozi.jpg" alt="슬라이더이미지"></div>
-        <div><img src="image/slider_main/20220927120542_4bli9f.jpg" alt="슬라이더이미지"></div>
-        <div><img src="image/slider_main/20230522103214_jx4zus.jpg" alt="슬라이더이미지"></div>
-      </div>
-      <div class="scroll-wrap flex">
-        <div class="scroll-icon flex">
-          <p>
-            <span class="blind">마우스아이콘</span>
-          </p>
+        <div class="scroll-wrap flex">
+          <div class="scroll-icon flex">
+            <p>
+              <span class="blind">마우스아이콘</span>
+            </p>
+          </div>
+          <p class="scroll-text">scroll</p>
         </div>
-        <p class="scroll-text">scroll</p>
-      </div>
-    </section>
-    <section class="menu-wrap flex">
-      <div class="menu-main">
-        <div class="menu-main-bg sig"></div>
-        <div class="content">
-          <h2 class="en-b">SELECTO MENU</h2>
-          <ul>
-            <li class="tab tab-1 en-r active"><span>SIGNATURE</span></li>
-            <li class="tab tab-2 en-r"><span>BEVERAGE</span></li>
-            <li class="tab tab-3 en-r"><span>COFFEE</span></li>
-            <li class="tab tab-4 en-r"><span>COOKIE</span></li>
+      </section>
+      <section class="menu-wrap flex">
+        <div class="menu-main">
+          <div class="menu-main-bg sig"></div>
+          <div class="content">
+            <h2 class="en-b">SELECTO MENU</h2>
+            <ul>
+              <li class="tab tab-1 en-r active"><span>SIGNATURE</span></li>
+              <li class="tab tab-2 en-r"><span>BEVERAGE</span></li>
+              <li class="tab tab-3 en-r"><span>COFFEE</span></li>
+              <li class="tab tab-4 en-r"><span>COOKIE</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu-sub-wrap">
+          <div class="menu-sub sig active">
+            <div class="content">
+              <div class="list">
+                <h3 class="en-b">SIGNATURE</h3>
+                <p>
+                  셀렉토 감성과 재미를 듬뿍 담아 낸, 셀렉토에서<br />
+                  맛볼 수 있는 시그니처 음료
+                </p>
+                <div class="flex">
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/sig/c-signature-item-01.png"
+                      alt="시그니처메뉴이미지"
+                  /></a>
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/sig/c-signature-item-02-1.png"
+                      alt="시그니처메뉴이미지"
+                  /></a>
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/sig/c-signature-item-03-1.png"
+                      alt="시그니처메뉴이미지"
+                  /></a>
+                </div>
+              </div>
+              <div class="topping">
+                <p>추천 토핑류</p>
+                <ul class="flex">
+                  <li>시럽_바닐라빈</li>
+                  <li>시럽_카라멜</li>
+                  <li>우유_오트밀</li>
+                  <li>크림_흑임자</li>
+                </ul>
+              </div>
+            </div>
+            <div class="menu-img">
+              <img
+                src="image/menu/sig/c-signature-item-00.png"
+                alt="시그니처메뉴이미지"
+              />
+            </div>
+          </div>
+          <div class="menu-sub bev">
+            <div class="content">
+              <div class="list">
+                <h3 class="en-b">BEVERAGE</h3>
+                <p>
+                  고객의 라이프 스타일에 맞춰 더욱 다양하게 즐길<br />
+                  수 있는 셀렉토의 음료 라인업!
+                </p>
+                <div class="flex">
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/bev/c-beverage-item-01.png"
+                      alt="음료메뉴이미지"
+                  /></a>
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/bev/c-beverage-item-02.png"
+                      alt="음료메뉴이미지"
+                  /></a>
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/bev/c-beverage-item-03.png"
+                      alt="음료메뉴이미지"
+                  /></a>
+                </div>
+              </div>
+              <div class="topping">
+                <p>추천 토핑류</p>
+                <ul class="flex">
+                  <li>시럽_카라멜</li>
+                  <li>우유_오트밀</li>
+                  <li>크림_흑임자</li>
+                </ul>
+              </div>
+            </div>
+            <div class="menu-img">
+              <img
+                src="image/menu/bev/c-beverage-item-00.png"
+                alt="음료메뉴이미지"
+              />
+            </div>
+          </div>
+          <div class="menu-sub cof">
+            <div class="content">
+              <div class="list">
+                <h3 class="en-b">COFFEE</h3>
+                <p>
+                  셀렉토는 품질 좋은 원두를 선별해, 최적의 로스팅 포인트로<br />
+                  더욱 섬세하게 균형잡힌 풍미의 커피를 고객에게 선사합니다.
+                </p>
+                <div class="flex">
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/cof/c-coffee-item-01.png"
+                      alt="커피메뉴이미지"
+                  /></a>
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/cof/c-coffee-item-02.png"
+                      alt="커피메뉴이미지"
+                  /></a>
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/cof/c-coffee-item-03.png"
+                      alt="커피메뉴이미지"
+                  /></a>
+                </div>
+              </div>
+              <div class="topping">
+                <p>추천 토핑류</p>
+                <ul class="flex">
+                  <li>우유_오트밀</li>
+                  <li>크림_흑임자</li>
+                </ul>
+              </div>
+            </div>
+            <div class="menu-img">
+              <img
+                src="image/menu/cof/c-coffee-item-00.png"
+                alt="커피메뉴이미지"
+              />
+            </div>
+          </div>
+          <div class="menu-sub coo">
+            <div class="content">
+              <div class="list">
+                <h3 class="en-b">COOKIE</h3>
+                <p>남녀노소, 어디서나 맛있게! 셀렉토 시그니처 수제 쿠키</p>
+                <div class="flex">
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/coo/c-cookie-item-01.png"
+                      alt="쿠키메뉴이미지"
+                  /></a>
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/coo/c-cookie-item-02.png"
+                      alt="쿠키메뉴이미지"
+                  /></a>
+                  <a href="#" class="list-img"
+                    ><img
+                      src="image/menu/coo/c-cookie-item-03.png"
+                      alt="쿠키메뉴이미지"
+                  /></a>
+                </div>
+              </div>
+              <div class="topping">
+                <p>추천 토핑류</p>
+                <ul class="flex">
+                  <li>시럽_바닐라빈</li>
+                  <li>시럽_카라멜</li>
+                  <li>우유_오트밀</li>
+                  <li>크림_흑임자</li>
+                </ul>
+              </div>
+            </div>
+            <div class="menu-img">
+              <img
+                src="image/menu/coo/c-cookie-item-00.png"
+                alt="쿠키메뉴이미지"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slogan flex">
+        <h2 class="blind">My Coffee, Our Table.</h2>
+        <img src="image/m-3rd_sec-header.svg" alt="My Coffee, Our Table." />
+      </section>
+      <section class="image-banner">
+        <h2 class="blind">이미지배너</h2>
+        <img src="image/m-3rd_sec-bg.jpg" alt="이미지배너" />
+      </section>
+      <section class="slider-text">
+        <h2 class="blind">텍스트슬라이드</h2>
+        <div class="slider-track">
+          <p>매장에서 직접 구워 맛있는 셀렉토 쿠키</p>
+          <p>매장에서 직접 구워 맛있는 셀렉토 쿠키</p>
+          <p>매장에서 직접 구워 맛있는 셀렉토 쿠키</p>
+          <p>매장에서 직접 구워 맛있는 셀렉토 쿠키</p>
+        </div>
+      </section>
+      <section class="donation">
+        <h2>셀렉토 커피에서 커피와 기부를 함께 즐기세요!</h2>
+        <p class="text">
+          매일 마시는 커피 한 잔을 '마시기만 해도 기부'가 되는 곳이 있습니다.
+          <br />
+          셀렉토커피에서는 SELECTO'S PICK을 마시기만 해도 결식아동에게 '우유
+          1팩'이 기부됩니다.
+        </p>
+        <div class="donation-count">
+          <p class="tit">결식아동에게 기부된 우유</p>
+          <p class="count">304,478<span>PACK</span></p>
+          <p class="date">2023.06.01일 기준</p>
+        </div>
+        <a href="#">자세히 보기</a>
+        <div class="bg-wrap">
+          <div class="bg-main"></div>
+          <div class="bg-sub"></div>
+          <div class="bg-dot"></div>
+        </div>
+      </section>
+      <section class="news flex">
+        <div class="news-main">
+          <h2 class="en-b">NEWS & EVENTS</h2>
+        </div>
+        <div class="news-sub">
+          <ul class="flex">
+            <li>
+              <a href="#">
+                <p class="cat">ENEVT</p>
+                <p class="tit">[NEW MENU] Chill out, SUMMER VIBES</p>
+                <p class="date">2023/05/22 ~ 2023/08/31</p>
+                <div></div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p class="cat">ENEVT</p>
+                <p class="tit">
+                  [제작지원] KBS 드라마 '어쩌다 마주친, 그대' 제작지원
+                </p>
+                <p class="date">2023/05/01 ~ 2023/06/20</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p class="cat">ENEVT</p>
+                <p class="tit">[NEW VIDEO] 내가 셀렉하는 오늘의 무드는?</p>
+                <p class="date">2022/10/18 ~ 2024/10/18</p>
+              </a>
+            </li>
           </ul>
         </div>
+        <div class="circle">
+          <a href="#"><span class="blind">새소식 바로가기</span></a>
+        </div>
+      </section>
+      <section class="instagram">
+        <h2 class="en-b">selecto_coffee</h2>
+        <div class="img-wrap flex">
+          <a href="#">
+            <img
+              src="image/insta/20230526104108_cp84sw.jpg"
+              alt="인스타이미지"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="image/insta/20230530174308_du3syl.jpg"
+              alt="인스타이미지"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="image/insta/20230531133546_s0dod9.jpg"
+              alt="인스타이미지"
+            />
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer class="flex">
+      <p class="logo-footer"><span class="blind">셀렉토커피</span></p>
+      <div class="link-wrap flex">
+        <a href="#" class="sns"
+          ><img src="image/footer/f-link-n.svg" alt="naver"
+        /></a>
+        <a href="#" class="sns"
+          ><img src="image/footer/f-link-y.svg" alt="youtube"
+        /></a>
+        <a href="#" class="sns"
+          ><img src="image/footer/f-link-i.svg" alt="instagram"
+        /></a>
       </div>
-      <div class="menu-sub-wrap">
-        <div class="menu-sub sig active">
-          <div class="content">
-            <div class="list">
-              <h3 class="en-b">SIGNATURE</h3>
-              <p>
-                셀렉토 감성과 재미를 듬뿍 담아 낸, 셀렉토에서<br>
-                맛볼 수 있는 시그니처 음료
-              </p>
-              <div class="flex">
-                <a href="#" class="list-img"><img src="image/menu/sig/c-signature-item-01.png" alt="시그니처메뉴이미지"></a>
-                <a href="#" class="list-img"><img src="image/menu/sig/c-signature-item-02-1.png" alt="시그니처메뉴이미지"></a>
-                <a href="#" class="list-img"><img src="image/menu/sig/c-signature-item-03-1.png" alt="시그니처메뉴이미지"></a>
-              </div>
-            </div>
-            <div class="topping">
-              <p>추천 토핑류</p>
-              <ul class="flex">
-                <li>시럽_바닐라빈</li>
-                <li>시럽_카라멜</li>
-                <li>우유_오트밀</li>
-                <li>크림_흑임자</li>
-              </ul>              
-            </div>
-          </div>
-          <div class="menu-img">
-            <img src="image/menu/sig/c-signature-item-00.png" alt="시그니처메뉴이미지">
-          </div>
-        </div>
-        <div class="menu-sub bev">
-          <div class="content">
-            <div class="list">
-              <h3 class="en-b">BEVERAGE</h3>
-              <p>
-                고객의 라이프 스타일에 맞춰 더욱 다양하게 즐길<br>
-                수 있는 셀렉토의 음료 라인업!
-              </p>
-              <div class="flex">
-                <a href="#" class="list-img"><img src="image/menu/bev/c-beverage-item-01.png" alt="음료메뉴이미지"></a>
-                <a href="#" class="list-img"><img src="image/menu/bev/c-beverage-item-02.png" alt="음료메뉴이미지"></a>
-                <a href="#" class="list-img"><img src="image/menu/bev/c-beverage-item-03.png" alt="음료메뉴이미지"></a>
-              </div>
-            </div>
-            <div class="topping">
-              <p>추천 토핑류</p>
-              <ul class="flex">
-                <li>시럽_카라멜</li>
-                <li>우유_오트밀</li>
-                <li>크림_흑임자</li>
-              </ul>              
-            </div>
-          </div>
-          <div class="menu-img">
-            <img src="image/menu/bev/c-beverage-item-00.png" alt="음료메뉴이미지">
-          </div>
-        </div>
-        <div class="menu-sub cof">
-          <div class="content">
-            <div class="list">
-              <h3 class="en-b">COFFEE</h3>
-              <p>
-                셀렉토는 품질 좋은 원두를 선별해, 최적의 로스팅 포인트로<br>
-                더욱 섬세하게 균형잡힌 풍미의 커피를 고객에게 선사합니다.
-              </p>
-              <div class="flex">
-                <a href="#" class="list-img"><img src="image/menu/cof/c-coffee-item-01.png" alt="커피메뉴이미지"></a>
-                <a href="#" class="list-img"><img src="image/menu/cof/c-coffee-item-02.png" alt="커피메뉴이미지"></a>
-                <a href="#" class="list-img"><img src="image/menu/cof/c-coffee-item-03.png" alt="커피메뉴이미지"></a>
-              </div>
-            </div>
-            <div class="topping">
-              <p>추천 토핑류</p>
-              <ul class="flex">
-                <li>우유_오트밀</li>
-                <li>크림_흑임자</li>
-              </ul>              
-            </div>
-          </div>
-          <div class="menu-img">
-            <img src="image/menu/cof/c-coffee-item-00.png" alt="커피메뉴이미지">
-          </div>
-        </div>
-        <div class="menu-sub coo">
-          <div class="content">
-            <div class="list">
-              <h3 class="en-b">COOKIE</h3>
-              <p>
-                남녀노소, 어디서나 맛있게! 셀렉토 시그니처 수제 쿠키
-              </p>
-              <div class="flex">
-                <a href="#" class="list-img"><img src="image/menu/coo/c-cookie-item-01.png" alt="쿠키메뉴이미지"></a>
-                <a href="#" class="list-img"><img src="image/menu/coo/c-cookie-item-02.png" alt="쿠키메뉴이미지"></a>
-                <a href="#" class="list-img"><img src="image/menu/coo/c-cookie-item-03.png" alt="쿠키메뉴이미지"></a>
-              </div>
-            </div>
-            <div class="topping">
-              <p>추천 토핑류</p>
-              <ul class="flex">
-                <li>시럽_바닐라빈</li>
-                <li>시럽_카라멜</li>
-                <li>우유_오트밀</li>
-                <li>크림_흑임자</li>
-              </ul>              
-            </div>
-          </div>
-          <div class="menu-img">
-            <img src="image/menu/coo/c-cookie-item-00.png" alt="쿠키메뉴이미지">
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="slogan flex">
-      <h2 class="blind">My Coffee, Our Table.</h2>
-      <img src="image/m-3rd_sec-header.svg" alt="My Coffee, Our Table.">
-    </section>
-    <section class="image-banner">
-      <h2 class="blind">이미지배너</h2>
-      <img src="image/m-3rd_sec-bg.jpg" alt="이미지배너">
-    </section>
-    <section class="slider-text">
-      <h2 class="blind">텍스트슬라이드</h2>
-      <div class="slider-track">
-        <p>매장에서 직접 구워 맛있는 셀렉토 쿠키</p>
-        <p>매장에서 직접 구워 맛있는 셀렉토 쿠키</p>
-        <p>매장에서 직접 구워 맛있는 셀렉토 쿠키</p>
-        <p>매장에서 직접 구워 맛있는 셀렉토 쿠키</p>
-      </div>
-    </section>
-    <section class="donation">
-      <h2>
-        셀렉토 커피에서 커피와 기부를
-        함께 즐기세요!
-      </h2>
-      <p class="text">
-        매일 마시는 커피 한 잔을 '마시기만 해도 기부'가 되는 곳이 있습니다. <br>
-        셀렉토커피에서는 SELECTO'S PICK을 마시기만 해도 결식아동에게 '우유 1팩'이 기부됩니다.
+      <p>
+        <strong><a href="">개인정보취급방침</a></strong>
       </p>
-      <div class="donation-count">
-        <p class="tit">결식아동에게 기부된 우유</p>
-        <p class="count">304,478<span>PACK</span></p>
-        <p class="date">2023.06.01일 기준</p>
+      <address>
+        <div class="flex">
+          <p>
+            <span
+              >주소 : 서울시 구로구 구로3동 222-14 에이스하이엔드타워 2차
+              1402호</span
+            >
+          </p>
+          <p>
+            <span
+              >도로명주소 : 서울시 구로구 디지털로26길 61 에이스하이엔드타워 2차
+              1402호</span
+            >
+          </p>
+        </div>
+        <div class="flex">
+          <p>
+            <span>대표이사 : 황규연</span>
+            <span>사업자등록번호 : 109-81-99153</span>
+          </p>
+          <p>
+            <span>전화 : 1600-5649</span>
+            <span>팩스 : 02-6340-1701</span>
+          </p>
+        </div>
+      </address>
+      <p class="copy">COPYRIGHT ㈜맥스원이링크 ALL RIGHTS RESERVED.</p>
+      <div class="go-top">
+        <a href="#">TOP</a>
       </div>
-      <a href="#">자세히 보기</a>
-      <div class="bg-wrap">
-        <div class="bg-main"></div>
-        <div class="bg-sub"></div>
-        <div class="bg-dot"></div>
-      </div>
-    </section>
-    <section class="news flex">
-      <div class="news-main">
-        <h2 class="en-b">
-          NEWS &
-          EVENTS
-        </h2>
-      </div>
-      <div class="news-sub">
-        <ul class="flex">
-          <li><a href="#">
-            <p class="cat">ENEVT</p>
-            <p class="tit">[NEW MENU] Chill out, SUMMER VIBES</p>
-            <p class="date">2023/05/22 ~ 2023/08/31</p>
-            <div></div>
-          </a></li>
-          <li><a href="#">
-            <p class="cat">ENEVT</p>
-            <p class="tit">[제작지원] KBS 드라마 '어쩌다 마주친, 그대' 제작지원</p>
-            <p class="date">2023/05/01 ~ 2023/06/20</p>
-          </a></li>
-          <li><a href="#">
-            <p class="cat">ENEVT</p>
-            <p class="tit">[NEW VIDEO] 내가 셀렉하는 오늘의 무드는?</p>
-            <p class="date">2022/10/18 ~ 2024/10/18</p>
-          </a></li>
-        </ul>
-      </div>
-      <div class="circle">
-        <a href="#"><span class="blind">새소식 바로가기</span></a>
-      </div>
-    </section>
-    <section class="instagram">
-      <h2 class="en-b">selecto_coffee</h2>
-      <div class="img-wrap flex">
-        <a href="#">
-          <img src="image/insta/20230526104108_cp84sw.jpg" alt="인스타이미지">
-        </a>
-        <a href="#">
-          <img src="image/insta/20230530174308_du3syl.jpg" alt="인스타이미지">
-        </a>
-        <a href="#">
-          <img src="image/insta/20230531133546_s0dod9.jpg" alt="인스타이미지">
-        </a>
-      </div>
-    </section>
-  </main>
-  <footer class="flex">
-    <p class="logo-footer"><span class="blind">셀렉토커피</span></p>
-    <div class="link-wrap flex">
-      <a href="#" class="sns"><img src="image/footer/f-link-n.svg" alt="naver"></a>
-      <a href="#" class="sns"><img src="image/footer/f-link-y.svg" alt="youtube"></a>
-      <a href="#" class="sns"><img src="image/footer/f-link-i.svg" alt="instagram"></a>
-    </div>
-    <p><strong><a href="">개인정보취급방침</a></strong></p>
-    <address>
-      <div class="flex">
-        <p><span>주소 : 서울시 구로구 구로3동 222-14 에이스하이엔드타워 2차 1402호</span></p>
-        <p><span>도로명주소 : 서울시 구로구 디지털로26길 61 에이스하이엔드타워 2차 1402호</span></p>
-      </div>
-      <div class="flex">
-        <p>
-          <span>대표이사 : 황규연</span>
-          <span>사업자등록번호 : 109-81-99153</span>
-        </p>
-        <p>
-          <span>전화 : 1600-5649</span>
-          <span>팩스 : 02-6340-1701</span>
-        </p>
-      </div>
-    </address>
-    <p class="copy">COPYRIGHT ㈜맥스원이링크 ALL RIGHTS RESERVED.</p>
-    <div class="go-top">
-      <a href="#">TOP</a>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>

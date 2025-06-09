@@ -1,391 +1,501 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no"><!-- 사파리 전화번호 인식 차단 -->
-  <title>KCC Corporation</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 사파리 전화번호 인식 차단 -->
+    <title>KCC Corporation</title>
 
-  <!-- font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-  <!-- style -->
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/kcc.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <!-- style -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/kcc.css" />
 
-  <!-- jquery -->
-  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <!-- swiper -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <!-- js -->
-  <script src="js/kcc.js"></script>
-  
-</head>
-<body>
-  
-  <header>
-    <div class="header-wrap flex m0auto">
-      <h1><a href="#"><img src="images/kcc_logo.png" alt="KCC"></a></h1>
-      <nav>
-        <ul class="gnb flex">
-          <li><a href="#">KCC소개</a></li>
-          <li><a href="#">ESG경영</a></li>
-          <li><a href="#">제품</a></li>
-          <li><a href="#">R&D</a></li>
-          <li><a href="#">홍보</a></li>
-          <li><a href="#">채용</a></li>
-          <li><a href="#">고객지원</a></li>
-          <li><a href="#">기술자료</a></li>
-        </ul>
-      </nav>
-      <div class="util flex">
-        <a href="#" class="btn-util">로그인</a>
-        <a href="#" class="btn-util">ENG</a>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- js -->
+    <script src="js/kcc.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-wrap flex m0auto">
+        <h1>
+          <a href="#"><img src="images/kcc_logo.png" alt="KCC" /></a>
+        </h1>
+        <nav>
+          <ul class="gnb flex">
+            <li><a href="#">KCC소개</a></li>
+            <li><a href="#">ESG경영</a></li>
+            <li><a href="#">제품</a></li>
+            <li><a href="#">R&D</a></li>
+            <li><a href="#">홍보</a></li>
+            <li><a href="#">채용</a></li>
+            <li><a href="#">고객지원</a></li>
+            <li><a href="#">기술자료</a></li>
+          </ul>
+        </nav>
+        <div class="util flex">
+          <a href="#" class="btn-util">로그인</a>
+          <a href="#" class="btn-util">ENG</a>
+        </div>
+        <div class="btn-m">
+          <a href="#">
+            <img src="images/icon/btn_m.svg" alt="전체보기" />
+          </a>
+        </div>
       </div>
-      <div class="btn-m">
-        <a href="#">
-          <img src="images/icon/btn_m.svg" alt="전체보기">
-        </a>
-      </div>
-    </div>
-  </header>
-  <main>
-
-    <!-- main-visual -->
-    <section class="main-visual">
-      <div class="swiper slider-main">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="text-wrap">
-              <h2>글로벌 응용소재화학기업 KCC</h2>
-              <p class="show">미래 기술을 담은  유기 · 무기 · 복합 소재</p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="text-wrap">
-              <h2>글로벌 응용소재화학기업 KCC</h2>
-              <p>다채로운 색상의 친환경 건축 · 선박 · 자동차 페인트</p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="text-wrap">
-              <h2>글로벌 응용소재화학기업 KCC</h2>
-              <p>환경과 안전까지 생각하는 건축 내외장재와 PVC창호</p>
-            </div>
-          </div>
-        </div> <!-- swiper-wrapper -->
-        <div class="swiper-pagination"></div>
-        <!-- <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div> -->
-      </div> <!-- swiper slider-main -->
-    </section> <!-- main-visual -->
-
-    <!-- notice -->
-    <section class="notice w1440">
-      <div class="news">
-        <h2>KCC NEWS</h2>
-        <div class="swiper slider-news">
+    </header>
+    <main>
+      <!-- main-visual -->
+      <section class="main-visual">
+        <div class="swiper slider-main">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <ul>
-                <li class="flex">
-                  <p><a href="#">KCC, 마시마로와 판교 현대백화점 팝업스토어 열어</a></p>
-                  <small>2023.07.19</small>
-                </li>
-                <li class="flex">
-                  <p><a href="#">KCC, 프리미엄 창호 전시장 'The Klenze Gallery' 오픈</a></p>
-                  <small>2023.07.17</small>
-                </li>
-                <li class="flex">
-                  <p><a href="#">KCC, 안성공장 EMC 라인 신설로 첨단소재 사업 박차</a></p>
-                  <small>2023.07.12</small>
-                </li>
-                <li class="flex">
-                  <p><a href="#">KCC, 소비자웰빙환경만족지수 창호, 도료 부문 1위</a></p>
-                  <small>2023.07.04</small>
-                </li>
-              </ul>
-            </div> <!-- swiper-slide -->
+              <div class="text-wrap">
+                <h2>글로벌 응용소재화학기업 KCC</h2>
+                <p class="show">미래 기술을 담은 유기 · 무기 · 복합 소재</p>
+              </div>
+            </div>
             <div class="swiper-slide">
-              <ul>
-                <li class="flex">
-                  <p><a href="#">내가 사는 제품은 어떤 기준으로?... KCC 건자재 관련 법규 안내 서비스 개시</a></p>
-                  <small>2023.06.29</small>
-                </li>
-                <li class="flex">
-                  <p><a href="#">KCC, ‘지속가능성보고서’ 발간… 인터랙티브 PDF 형식 도입</a></p>
-                  <small>2023.06.27</small>
-                </li>
-                <li class="flex">
-                  <p><a href="#">KCC, 서초구와 함께 응급처치 교육 캠페인 진행</a></p>
-                  <small>2023.07.28</small>
-                </li>
-                <li class="flex">
-                  <p><a href="#">KCC, 방열 분체도료 개발… 특허 출원 완료</a></p>
-                  <small>2023.07.24</small>
-                </li>
-              </ul>
-            </div> <!-- swiper-slide -->
-          </div> <!-- swiper-wrapper -->
+              <div class="text-wrap">
+                <h2>글로벌 응용소재화학기업 KCC</h2>
+                <p>다채로운 색상의 친환경 건축 · 선박 · 자동차 페인트</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-wrap">
+                <h2>글로벌 응용소재화학기업 KCC</h2>
+                <p>환경과 안전까지 생각하는 건축 내외장재와 PVC창호</p>
+              </div>
+            </div>
+          </div>
+          <!-- swiper-wrapper -->
+          <div class="swiper-pagination"></div>
+          <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+        </div>
+        <!-- swiper slider-main -->
+      </section>
+      <!-- main-visual -->
+
+      <!-- notice -->
+      <section class="notice w1440">
+        <div class="news">
+          <h2>KCC NEWS</h2>
+          <div class="swiper slider-news">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <ul>
+                  <li class="flex">
+                    <p>
+                      <a href="#"
+                        >KCC, 마시마로와 판교 현대백화점 팝업스토어 열어</a
+                      >
+                    </p>
+                    <small>2023.07.19</small>
+                  </li>
+                  <li class="flex">
+                    <p>
+                      <a href="#"
+                        >KCC, 프리미엄 창호 전시장 'The Klenze Gallery' 오픈</a
+                      >
+                    </p>
+                    <small>2023.07.17</small>
+                  </li>
+                  <li class="flex">
+                    <p>
+                      <a href="#"
+                        >KCC, 안성공장 EMC 라인 신설로 첨단소재 사업 박차</a
+                      >
+                    </p>
+                    <small>2023.07.12</small>
+                  </li>
+                  <li class="flex">
+                    <p>
+                      <a href="#"
+                        >KCC, 소비자웰빙환경만족지수 창호, 도료 부문 1위</a
+                      >
+                    </p>
+                    <small>2023.07.04</small>
+                  </li>
+                </ul>
+              </div>
+              <!-- swiper-slide -->
+              <div class="swiper-slide">
+                <ul>
+                  <li class="flex">
+                    <p>
+                      <a href="#"
+                        >내가 사는 제품은 어떤 기준으로?... KCC 건자재 관련 법규
+                        안내 서비스 개시</a
+                      >
+                    </p>
+                    <small>2023.06.29</small>
+                  </li>
+                  <li class="flex">
+                    <p>
+                      <a href="#"
+                        >KCC, ‘지속가능성보고서’ 발간… 인터랙티브 PDF 형식
+                        도입</a
+                      >
+                    </p>
+                    <small>2023.06.27</small>
+                  </li>
+                  <li class="flex">
+                    <p>
+                      <a href="#"
+                        >KCC, 서초구와 함께 응급처치 교육 캠페인 진행</a
+                      >
+                    </p>
+                    <small>2023.07.28</small>
+                  </li>
+                  <li class="flex">
+                    <p>
+                      <a href="#">KCC, 방열 분체도료 개발… 특허 출원 완료</a>
+                    </p>
+                    <small>2023.07.24</small>
+                  </li>
+                </ul>
+              </div>
+              <!-- swiper-slide -->
+            </div>
+            <!-- swiper-wrapper -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <!-- swiper -->
+        </div>
+        <!-- news -->
+        <div class="search">
+          <h2>기술자료검색</h2>
+          <p>
+            MSDS / 데이터시트 / 인증서 / 성적서 등<br />
+            기술자료를 검색하실 수 있습니다.
+          </p>
+          <form action="" method="get">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="검색어를 입력하세요."
+            />
+          </form>
+        </div>
+        <!-- search -->
+      </section>
+      <!-- notice -->
+
+      <!-- business -->
+      <section class="business w1440">
+        <h2>Business Area</h2>
+        <ul class="tab-busi flex">
+          <li class="active" data-tab="elec"><a href="#">전자·가전·전기</a></li>
+          <li data-tab="car"><a href="#">자동차</a></li>
+          <li data-tab="ship"><a href="#">선박 해양플랜트</a></li>
+          <li data-tab="plant"><a href="#">플랜트</a></li>
+          <li data-tab="arch"><a href="#">건축</a></li>
+          <li data-tab="etc"><a href="#">산업 기타</a></li>
+        </ul>
+        <div class="drop-busi elec flex active" id="elec">
+          <div class="flex">
+            <em>KCC in Key Industries</em>
+            <h3>Electronic · Home Appliances</h3>
+            <small>전자·가전·전기</small>
+            <ul class="flex">
+              <li class="prid02"><span class="blind">도료</span></li>
+              <li class="prid03"><span class="blind">소재</span></li>
+              <li class="prid04"><span class="blind">접착제</span></li>
+            </ul>
+          </div>
+          <div>
+            <p>KCC의 기술력으로 가전제품 및 전기·전자 소재의 품격을 높이다.</p>
+            <p>
+              집 안 구석구석 손길과 눈길 닿는 곳 부터 보이지 않는곳까지 어디서든
+              KCC의 기술력을 느낄 수 있습니다. <br />
+              쉽게 긁히지 않는 냉장고 표면, 거친 진동에도 끄떡없는 세탁기
+              부속품, TV·컴퓨터·냉장고 등 전자기기 내부에 있는 소재 등 KCC
+              제품으로 완성할 수 있습니다.
+            </p>
+          </div>
+        </div>
+        <!-- drop-busi -->
+        <div class="drop-busi car flex" id="car">
+          <div class="flex">
+            <em>KCC in Key Industries</em>
+            <h3>Automobile</h3>
+            <small>자동차</small>
+            <ul class="flex">
+              <li class="prid02"><span class="blind">도료</span></li>
+              <li class="prid03"><span class="blind">소재</span></li>
+              <li class="prid04"><span class="blind">접착제</span></li>
+            </ul>
+          </div>
+          <div>
+            <p>자동차 내부의 고급스러움과 고품격 외관을 완성하다.</p>
+            <p>
+              자동차의 외관은 외부 환경에 직접적으로 노출되기 때문에KCC의 다양한
+              제품들은 자동차의 고품격 외관을 결정짓는데 주요한 역활을 합니다.
+              <br />
+              자동차 부품 곳곳에 KCC의 다양한 제품이 적용되어 기능성을 높이고
+              차량내부의 고급스러운 분위기를 연출하는데 큰 역활을 하고 있습니다.
+            </p>
+          </div>
+        </div>
+        <!-- drop-busi -->
+        <div class="drop-busi ship flex" id="ship">
+          <div class="flex">
+            <em>KCC in Key Industries</em>
+            <h3>Ships / Marine plant</h3>
+            <small>선박 해양플랜트</small>
+            <ul class="flex">
+              <li class="prid02"><span class="blind">도료</span></li>
+              <li class="prid03"><span class="blind">소재</span></li>
+              <li class="prid05"><span class="blind">보온단열제</span></li>
+            </ul>
+          </div>
+          <div>
+            <p>
+              산업용 특수 환경에 적합한 제품으로 혹독한 환경에 노출되는
+              선박해양구조물을 보호합니다.
+            </p>
+            <p>
+              녹이 생기는 것을 방지하는 방청도료와 해수 및 마찰 저항을 낮춰
+              연료비를 절감해주는 방오도료, 화재 확산을 방지하는 보온단열재까지
+              KCC제품을 다양하게 적용하고 있습니다.
+            </p>
+          </div>
+        </div>
+        <!-- drop-busi -->
+        <div class="drop-busi plant flex" id="plant">
+          <div class="flex">
+            <em>KCC in Key Industries</em>
+            <h3>Plant</h3>
+            <small>플랜트</small>
+            <ul class="flex">
+              <li class="prid02"><span class="blind">도료</span></li>
+              <li class="prid05"><span class="blind">보온단열제</span></li>
+            </ul>
+          </div>
+          <div>
+            <p>극한 부식 환경으로부터 플랜트 설비를 보호하다.</p>
+            <p>
+              플랜트 시장에 적용되는 KCC 도료는 강교, 발전, 석유화학 산업에
+              적용되는 수많은 시설물의 부식방지 유지관리 및 성능향상을 위한 필수
+              자재입니다. <br />
+              또한 내화도료는 화재로부터 철골 구조물을 보호합니다.
+            </p>
+          </div>
+        </div>
+        <!-- drop-busi -->
+        <div class="drop-busi arch flex" id="arch">
+          <div class="flex">
+            <em>KCC in Key Industries</em>
+            <h3>Construction</h3>
+            <small>건축</small>
+            <ul class="flex">
+              <li class="prid02"><span class="blind">도료</span></li>
+              <li class="prid07"><span class="blind">내외장제</span></li>
+              <li class="prid05"><span class="blind">보온단열제</span></li>
+              <li class="prid06"><span class="blind">창호</span></li>
+            </ul>
+          </div>
+          <div>
+            <p>KCC의 기술력! 친환경적이고 세련된 실내 공간을 만들다.</p>
+            <p>
+              최근 건축물의 트랜드는 자연 친화적이면서 세련된 디자인에 초점을
+              맞춘 건축자재의 고급화입니다. <br />
+              삶의 질이 향상되고 생활공간에 대한 인식이 변화하면서 나타난
+              현상입니다. 거주자의 건강에 무해하며 고급스러운 외관을 자랑하는
+              KCC 건축용 제품을 살펴 봅시다.
+            </p>
+          </div>
+        </div>
+        <!-- drop-busi -->
+        <div class="drop-busi etc flex" id="etc">
+          <div class="flex">
+            <em>KCC in Key Industries</em>
+            <h3>Other</h3>
+            <small>산업 기타</small>
+            <ul class="flex">
+              <li class="prid02"><span class="blind">도료</span></li>
+              <li class="prid03"><span class="blind">소재</span></li>
+            </ul>
+          </div>
+          <div>
+            <p>
+              기계 설비 내구성을 높이는 KCC의 기술력, 일상속에 스며든 KCC <br />
+              기계 설비 내구성을 높이는 KCC의 기술력, 일상속에 스며든 KCC
+            </p>
+            <p>
+              산업 현장에서 찾아볼 수 있는 KCC의 제품들은 기계 설비에 적용되는
+              도료에서부터 소재까지 그 종류가 매우 다양합니다.
+            </p>
+          </div>
+        </div>
+        <!-- drop-busi -->
+      </section>
+      <!-- business -->
+
+      <!-- banner -->
+      <section class="banner">
+        <a href="#"
+          ><img
+            src="images/banner/main_bnr_webzine_01.jpg"
+            alt="KCC웹진 보러가기"
+        /></a>
+      </section>
+      <!-- banner -->
+
+      <!-- story -->
+      <section class="story w1440">
+        <h2>Brand Story</h2>
+        <div class="swiper slider-story">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="images/story/story_01.png" alt="광고" />
+                </div>
+                <em>TV·디지털광고</em>
+                <h3>[Klenze] 창이 아니다, 클렌체다</h3>
+                <small>2023-04-03</small>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="images/story/story_02.jpg" alt="유튜브" />
+                </div>
+                <em>유튜브</em>
+                <h3>[K씨씨대학교] KCC 천장재 '마이톤 스카이'</h3>
+                <small>2023-07-14</small>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="images/story/story_03.png" alt="World" />
+                </div>
+                <em>인스타그램 - KCC World</em>
+                <h3>'The Klenze Gallery' GRAND OPEN!</h3>
+                <small>2023-07-18</small>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="images/story/story_04.png" alt="SUPRO" />
+                </div>
+                <em>인스타그램 - SUPRO</em>
+                <h3>푸릇푸릇 싱그러운 #GL0465</h3>
+                <small>2023-07-20</small>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="images/story/story_05.png" alt="Klenze" />
+                </div>
+                <em>인스타그램 - Klenze</em>
+                <h3>Klenze Tech Guide - 다중챔버</h3>
+                <small>2023-07-14</small>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="images/story/story_06.jpg" alt="BLOG" />
+                </div>
+                <em>블로그</em>
+                <h3>장마철&태풍 창호 피해 예방 가이드</h3>
+                <small>2023-07-20</small>
+              </a>
+            </div>
+          </div>
+          <!-- swiper-wrapper -->
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
-        </div> <!-- swiper -->
-      </div> <!-- news -->
-      <div class="search">
-        <h2>기술자료검색</h2>
-        <p>MSDS / 데이터시트 / 인증서 / 성적서 등<br> 기술자료를 검색하실 수 있습니다.</p>
-        <form action="" method="get">
-          <input type="text" name="search" id="search" placeholder="검색어를 입력하세요.">
-        </form>
-      </div> <!-- search -->
-    </section> <!-- notice -->
-
-    <!-- business -->
-    <section class="business w1440">
-      <h2>Business Area</h2>
-      <ul class="tab-busi flex">
-        <li class="active" data-tab="elec"><a href="#">전자·가전·전기</a></li>
-        <li data-tab="car"><a href="#">자동차</a></li>
-        <li data-tab="ship"><a href="#">선박 해양플랜트</a></li>
-        <li data-tab="plant"><a href="#">플랜트</a></li>
-        <li data-tab="arch"><a href="#">건축</a></li>
-        <li data-tab="etc"><a href="#">산업 기타</a></li>
-      </ul>
-      <div class="drop-busi elec flex active" id="elec">
-        <div class="flex">
-          <em>KCC in Key Industries</em>
-          <h3>Electronic · Home Appliances</h3>
-          <small>전자·가전·전기</small>
-          <ul class="flex">
-            <li class="prid02"><span class="blind">도료</span></li>
-            <li class="prid03"><span class="blind">소재</span></li>
-            <li class="prid04"><span class="blind">접착제</span></li>
-          </ul>
         </div>
-        <div>
-          <p>KCC의 기술력으로 가전제품 및 전기·전자 소재의 품격을 높이다.</p>
-          <p>
-            집 안 구석구석 손길과 눈길 닿는 곳 부터 보이지 않는곳까지 어디서든 KCC의 기술력을 느낄 수 있습니다. <br>
-            쉽게 긁히지 않는 냉장고 표면, 거친 진동에도 끄떡없는 세탁기 부속품, TV·컴퓨터·냉장고 등 전자기기 내부에 있는 소재 등 KCC 제품으로 완성할 수 있습니다.
-          </p>
-        </div>
-      </div> <!-- drop-busi -->
-      <div class="drop-busi car flex" id="car">
-        <div class="flex">
-          <em>KCC in Key Industries</em>
-          <h3>Automobile</h3>
-          <small>자동차</small>
-          <ul class="flex">
-            <li class="prid02"><span class="blind">도료</span></li>
-            <li class="prid03"><span class="blind">소재</span></li>
-            <li class="prid04"><span class="blind">접착제</span></li>
-          </ul>
-        </div>
-        <div>
-          <p>자동차 내부의 고급스러움과 고품격 외관을 완성하다.</p>
-          <p>
-            자동차의 외관은 외부 환경에 직접적으로 노출되기 때문에KCC의 다양한 제품들은 자동차의 고품격 외관을 결정짓는데 주요한 역활을 합니다. <br>
-            자동차 부품 곳곳에 KCC의 다양한 제품이 적용되어 기능성을 높이고 차량내부의 고급스러운 분위기를 연출하는데 큰 역활을 하고 있습니다.
-          </p>
-        </div>
-      </div> <!-- drop-busi -->
-      <div class="drop-busi ship flex" id="ship">
-        <div class="flex">
-          <em>KCC in Key Industries</em>
-          <h3>Ships / Marine plant</h3>
-          <small>선박 해양플랜트</small>
-          <ul class="flex">
-            <li class="prid02"><span class="blind">도료</span></li>
-            <li class="prid03"><span class="blind">소재</span></li>
-            <li class="prid05"><span class="blind">보온단열제</span></li>
-          </ul>
-        </div>
-        <div>
-          <p>산업용 특수 환경에 적합한 제품으로 혹독한 환경에 노출되는 선박해양구조물을 보호합니다.</p>
-          <p>
-            녹이 생기는 것을 방지하는 방청도료와 해수 및 마찰 저항을 낮춰 연료비를 절감해주는 방오도료, 화재 확산을 방지하는 보온단열재까지 KCC제품을 다양하게 적용하고 있습니다.
-          </p>
-        </div>
-      </div> <!-- drop-busi -->
-      <div class="drop-busi plant flex" id="plant">
-        <div class="flex">
-          <em>KCC in Key Industries</em>
-          <h3>Plant</h3>
-          <small>플랜트</small>
-          <ul class="flex">
-            <li class="prid02"><span class="blind">도료</span></li>
-            <li class="prid05"><span class="blind">보온단열제</span></li>
-          </ul>
-        </div>
-        <div>
-          <p>극한 부식 환경으로부터 플랜트 설비를 보호하다.</p>
-          <p>
-            플랜트 시장에 적용되는 KCC 도료는 강교, 발전, 석유화학 산업에 적용되는 수많은 시설물의 부식방지 유지관리 및 성능향상을 위한 필수 자재입니다. <br>
-            또한 내화도료는 화재로부터 철골 구조물을 보호합니다.
-          </p>
-        </div>
-      </div> <!-- drop-busi -->
-      <div class="drop-busi arch flex" id="arch">
-        <div class="flex">
-          <em>KCC in Key Industries</em>
-          <h3>Construction</h3>
-          <small>건축</small>
-          <ul class="flex">
-            <li class="prid02"><span class="blind">도료</span></li>
-            <li class="prid07"><span class="blind">내외장제</span></li>
-            <li class="prid05"><span class="blind">보온단열제</span></li>
-            <li class="prid06"><span class="blind">창호</span></li>
-          </ul>
-        </div>
-        <div>
-          <p>KCC의 기술력! 친환경적이고 세련된 실내 공간을 만들다.</p>
-          <p>
-            최근 건축물의 트랜드는 자연 친화적이면서 세련된 디자인에 초점을 맞춘 건축자재의 고급화입니다. <br>
-            삶의 질이 향상되고 생활공간에 대한 인식이 변화하면서 나타난 현상입니다. 거주자의 건강에 무해하며 고급스러운 외관을 자랑하는 KCC 건축용 제품을 살펴 봅시다.
-          </p>
-        </div>
-      </div> <!-- drop-busi -->
-      <div class="drop-busi etc flex" id="etc">
-        <div class="flex">
-          <em>KCC in Key Industries</em>
-          <h3>Other</h3>
-          <small>산업 기타</small>
-          <ul class="flex">
-            <li class="prid02"><span class="blind">도료</span></li>
-            <li class="prid03"><span class="blind">소재</span></li>
-          </ul>
-        </div>
-        <div>
-          <p>기계 설비 내구성을 높이는 KCC의 기술력, 일상속에 스며든 KCC <br> 기계 설비 내구성을 높이는 KCC의 기술력, 일상속에 스며든 KCC</p>
-          <p>
-            산업 현장에서 찾아볼 수 있는 KCC의 제품들은 기계 설비에 적용되는 도료에서부터 소재까지 그 종류가 매우 다양합니다.
-          </p>
-        </div>
-      </div> <!-- drop-busi -->
-    </section> <!-- business -->
-
-    <!-- banner -->
-    <section class="banner">
-      <a href="#"><img src="images/banner/main_bnr_webzine_01.jpg" alt="KCC웹진 보러가기"></a>
-    </section> <!-- banner -->
-
-    <!-- story -->
-    <section class="story w1440">
-      <h2>Brand Story</h2>
-      <div class="swiper slider-story">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="#">
-              <div class="img-wrap">
-                <img src="images/story/story_01.png" alt="광고">
-              </div>
-              <em>TV·디지털광고</em>
-              <h3>[Klenze] 창이 아니다, 클렌체다</h3>
-              <small>2023-04-03</small>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#">
-              <div class="img-wrap">
-                <img src="images/story/story_02.jpg" alt="유튜브">
-              </div>
-              <em>유튜브</em>
-              <h3>[K씨씨대학교] KCC 천장재 '마이톤 스카이'</h3>
-              <small>2023-07-14</small>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#">
-              <div class="img-wrap">
-                <img src="images/story/story_03.png" alt="World">
-              </div>
-              <em>인스타그램 - KCC World</em>
-              <h3>'The Klenze Gallery' GRAND OPEN!</h3>
-              <small>2023-07-18</small>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#">
-              <div class="img-wrap">
-                <img src="images/story/story_04.png" alt="SUPRO">
-              </div>
-              <em>인스타그램 - SUPRO</em>
-              <h3>푸릇푸릇 싱그러운 #GL0465</h3>
-              <small>2023-07-20</small>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#">
-              <div class="img-wrap">
-                <img src="images/story/story_05.png" alt="Klenze">
-              </div>
-              <em>인스타그램 - Klenze</em>
-              <h3>Klenze Tech Guide - 다중챔버</h3>
-              <small>2023-07-14</small>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#">
-              <div class="img-wrap">
-                <img src="images/story/story_06.jpg" alt="BLOG">
-              </div>
-              <em>블로그</em>
-              <h3>장마철&태풍 창호 피해 예방 가이드</h3>
-              <small>2023-07-20</small>
-            </a>
-          </div>
-        </div> <!-- swiper-wrapper -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div> <!-- swiper -->
-    </section> <!-- story -->
-
-  </main>
-  <footer>
-    <div class="link-wrap">
-      <section class="link flex w1440">
-        <ul class="flex">
-          <li><a href="#"><strong>개인정보 처리방침</strong></a></li>
-          <li><a href="#">협력업체 등록안내</a></li>
-          <li><a href="#">동반성장 홍보영상</a></li>
-          <li><a href="#">전자공고</a></li>
-          <li><a href="#">SITEMAP</a></li>
-        </ul>
-        <div class="drop-wrap flex">
-          <div><a href="#">방문예약</a></div>
-          <div><a href="#">데이터뱅크</a></div>
-          <div><a href="#">패밀리 사이트</a></div>
-        </div>
+        <!-- swiper -->
       </section>
-    </div>
-    <div class="comp-wrap">
-      <section class="comp flex w1440">
-        <div class="addr-wrap flex">
-          <p class="footer-logo"><span class="blind">KCC</span></p>
-          <address>
-            <dl class="flex">
-              <dt>(주)케이씨씨</dt>
-              <dd>서울특별시 서초구 사평대로 344</dd>
-              <dt>고객상담실</dt>
-              <dd>080-022-8200</dd>
-              <dt>대표번호</dt>
-              <dd>02-3480-5000</dd>
-            </dl>
-            <p class="copy">COPYRIGHT (C) 2017 KCC CORPORATION. <br class="mb"> ALL RIGHTS RESERVED</p>
-          </address>
-        </div>
-        <ul class="sns-wrap flex">
-          <li><a href="#"><img src="images/icon/ico_facebook.png" alt="페이스북"></a></li>
-          <li><a href="#"><img src="images/icon/ico_instagram.png" alt="인스타그램"></a></li>
-          <li><a href="#"><img src="images/icon/ico_npost.png" alt="네이버포스트"></a></li>
-          <li><a href="#"><img src="images/icon/ico_youtube.png" alt="유튜브"></a></li>
-        </ul>
-      </section>
-    </div>
-  </footer>
-
-</body>
+      <!-- story -->
+    </main>
+    <footer>
+      <div class="link-wrap">
+        <section class="link flex w1440">
+          <ul class="flex">
+            <li>
+              <a href="#"><strong>개인정보 처리방침</strong></a>
+            </li>
+            <li><a href="#">협력업체 등록안내</a></li>
+            <li><a href="#">동반성장 홍보영상</a></li>
+            <li><a href="#">전자공고</a></li>
+            <li><a href="#">SITEMAP</a></li>
+          </ul>
+          <div class="drop-wrap flex">
+            <div><a href="#">방문예약</a></div>
+            <div><a href="#">데이터뱅크</a></div>
+            <div><a href="#">패밀리 사이트</a></div>
+          </div>
+        </section>
+      </div>
+      <div class="comp-wrap">
+        <section class="comp flex w1440">
+          <div class="addr-wrap flex">
+            <p class="footer-logo"><span class="blind">KCC</span></p>
+            <address>
+              <dl class="flex">
+                <dt>(주)케이씨씨</dt>
+                <dd>서울특별시 서초구 사평대로 344</dd>
+                <dt>고객상담실</dt>
+                <dd>080-022-8200</dd>
+                <dt>대표번호</dt>
+                <dd>02-3480-5000</dd>
+              </dl>
+              <p class="copy">
+                COPYRIGHT (C) 2017 KCC CORPORATION. <br class="mb" />
+                ALL RIGHTS RESERVED
+              </p>
+            </address>
+          </div>
+          <ul class="sns-wrap flex">
+            <li>
+              <a href="#"
+                ><img src="images/icon/ico_facebook.png" alt="페이스북"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icon/ico_instagram.png" alt="인스타그램"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icon/ico_npost.png" alt="네이버포스트"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icon/ico_youtube.png" alt="유튜브"
+              /></a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </footer>
+  </body>
 </html>
