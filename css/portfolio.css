@@ -20,6 +20,9 @@ h2.tit {
   text-indent: -0.4rem;
   text-transform: uppercase;
 }
+h2.tit + .link-btn {
+  margin-top: 0;
+}
 
 h3.tit {
   padding-bottom: 1.5rem;
@@ -127,7 +130,6 @@ header {
   box-sizing: border-box;
   font-weight: 700;
   z-index: 10;
-  /* nav */
 }
 header h1 {
   font-size: 2rem;
@@ -216,6 +218,9 @@ header nav .gnb a:hover::after {
 }
 header nav .gnb:hover a {
   animation: none;
+}
+header {
+  /* nav */
 }
 header .btn-mobile {
   display: none;
@@ -310,7 +315,7 @@ header .btn-mobile {
   object-fit: cover;
 }
 .projects .slider-projects .slick-list .slider-item .item-text {
-  padding-top: 12vh;
+  padding-top: 9vh;
   opacity: 0;
   transition: all 1s;
 }

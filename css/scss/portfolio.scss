@@ -23,6 +23,10 @@ h2.tit {
   letter-spacing: 0.5em;
   text-indent: -0.4rem;
   text-transform: uppercase;
+
+  + .link-btn {
+    margin-top: 0;
+  }
 }
 
 h3.tit {
@@ -264,7 +268,9 @@ header {
 
   .tit-wrap {
     display: grid;
-    grid-template-columns: calc((1400px - 20px * 11) / 12 * 4 + 20px * 4 + 38px) auto;
+    grid-template-columns:
+      calc((1400px - 20px * 11) / 12 * 4 + 20px * 4 + 38px)
+      auto;
     position: absolute;
     left: calc((100% - 1400px) / 2);
     top: 23.5vh;
@@ -344,7 +350,7 @@ header {
           }
         }
         .item-text {
-          padding-top: 12vh;
+          padding-top: 9vh;
           opacity: 0;
           transition: all 1s;
 
