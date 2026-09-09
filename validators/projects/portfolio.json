@@ -1,0 +1,301 @@
+{
+  "project": "portfolio",
+  "ds": {
+    "fileKey": "JOuIRHmhgIz2r5F6pqa3ML",
+    "name": "j. sik Portfolio DS (Branch B — 시안 확정 후 작성)"
+  },
+  "tokenRef": "validators/out/portfolio-tokens.json",
+  "codeTokensCss": "src/styles/tokens.css",
+  "tokenCssNaming": {
+    "colorPrefix": "--pf-",
+    "spaceFrom": "spacing/",
+    "spaceTo": "--pf-space-",
+    "sizeFrom": "size/",
+    "sizeTo": "--pf-size-",
+    "radiusFrom": "radius/",
+    "radiusTo": "--pf-radius-",
+    "textClass": {},
+    "weightMap": {
+      "Bold": 700,
+      "SemiBold": 600,
+      "Medium": 500,
+      "Regular": 400
+    }
+  },
+  "shell": {
+    "viewport": {
+      "w": 1440,
+      "h": 900
+    },
+    "componentNames": [
+      "header",
+      "footer"
+    ],
+    "spacingMax": 96
+  },
+  "check1": {
+    "interactiveDetect": "btn|button|link|chip|tag|nav|toggle|card|filter",
+    "requiredStatesForPass": [
+      "focus",
+      "disabled"
+    ],
+    "stateSynonyms": {
+      "active": [
+        "active",
+        "pressed",
+        "selected"
+      ],
+      "default": [
+        "default",
+        "normal",
+        "rest",
+        "enabled"
+      ]
+    }
+  },
+  "structuralPxAllow": {
+    "1px": "hairline border-width",
+    "2px": "focus ring width/offset"
+  },
+  "viewportLint": {
+    "root": ".site",
+    "runtimeViewport": {
+      "w": 1440,
+      "h": 900
+    }
+  },
+  "recall": {
+    "maxNonSpecOverlap": 0.5
+  },
+  "emitReviewBundle": "on-demand",
+  "selfVerify": {
+    "tokensTotal": null,
+    "dsRaw": 0
+  },
+  "screens": {
+    "home": {
+      "label": "홈 (한 장, 프로젝트 21건 격자)",
+      "mockup": {
+        "fileKey": "JOuIRHmhgIz2r5F6pqa3ML",
+        "frameId": null,
+        "options": {
+          "A": {
+            "frameId": "2:2",
+            "label": "Editorial Ledger — 종이색 바탕, 세리프(Hahmlet) 제목, 2열 가로형 카드"
+          },
+          "B": {
+            "frameId": "4:2",
+            "label": "Blueprint Grid — 흰 바탕, 사양표 형식, 3열 테두리 카드, 모노 라벨"
+          },
+          "C": {
+            "frameId": "4:65",
+            "label": "Dark Gallery — 어두운 바탕, 큰 대표 이미지, 4열 이미지 중심 카드"
+          }
+        }
+      },
+      "layoutMode": "document-scroll",
+      "designAnchors": {
+        "nav": [
+          "HOME",
+          "PROJECTS",
+          "WORK",
+          "SKILLS"
+        ],
+        "hero": [
+          "j. sik",
+          "Portfolio",
+          "Front-end Developer",
+          "Brand",
+          "Graphic",
+          "Editorial",
+          "Designer"
+        ],
+        "sectionTitles": [
+          "Projects",
+          "Work Experience",
+          "Skills"
+        ],
+        "buttons": [
+          "Development Portfolio",
+          "Design Portfolio",
+          "Work Experience"
+        ],
+        "projectTitles": [
+          "더컨벤션",
+          "EZ PLANET",
+          "Inspector",
+          "DS Monitor",
+          "Mnemosure",
+          "Broker Rogue",
+          "Hybrid RAG Chatbot",
+          "Blog Automation",
+          "VNC",
+          "별마당도서관",
+          "Portfolio",
+          "KCC Corporation",
+          "슈피겐코리아",
+          "SK Careers",
+          "셀렉토 커피",
+          "오리온",
+          "행복나눔재단",
+          "코웨이",
+          "렉서스",
+          "지산리조트",
+          "삼성카드"
+        ],
+        "roles": [
+          "UIUX 기획",
+          "개발",
+          "구현",
+          "기획",
+          "디자인",
+          "설계",
+          "퍼블리싱"
+        ],
+        "linkLabels": [
+          "Figma",
+          "Lucid",
+          "PyPI",
+          "Slide",
+          "npm"
+        ],
+        "workSub": [
+          "10년 이상의 팀장급 디자인 경력과",
+          "논리적 사고를 가진 디자이너 겸 개발자"
+        ],
+        "workItems": [
+          "html, CSS, javascript, jQuery, Figma 등 국가기간전략훈련 이수",
+          "3개 웹사이트 디자인 리뉴얼",
+          "신한미래설계 모바일 어플리케이션 디자인 참여",
+          "6개 브랜드, 12개 지점 웨딩홀 온/오프라인 브랜드 디자인",
+          "사인물, 인쇄물, 온라인 등 외부업체 커뮤니케이션",
+          "대기업 및 공사 근무 경험",
+          "팀 리더 역할 경험",
+          "완성형 한글폰트 제작 교육 이수 및 전시회 참여"
+        ],
+        "designWorks": [
+          "한의원 브랜딩",
+          "신한은행 어플리케이션",
+          "아스트라제네카 심포지엄",
+          "알콘 뉴스레터",
+          "사노피 연하장"
+        ],
+        "skills": [
+          "HTML",
+          "CSS",
+          "SCSS",
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "jQuery",
+          "Bootstrap",
+          "Figma",
+          "git",
+          "Indesign",
+          "Keynote"
+        ],
+        "footer": [
+          "Notice",
+          "이 사이트의 Projects 내 작업물은 실제 사이트가 아니므로",
+          "이용에 주의하시기 바랍니다.",
+          "Copyright 2026. j. sik all rights reserved."
+        ],
+        "contact": [
+          "GitHub",
+          "StackBlitz",
+          "CodePen",
+          "jsiksn@gmail.com"
+        ]
+      },
+      "code": {
+        "files": [],
+        "anchors": [],
+        "orderedArray": null
+      },
+      "checkLayout": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      }
+    },
+    "detail": {
+      "label": "프로젝트 상세 (예: DS Monitor)",
+      "mockup": {
+        "fileKey": "JOuIRHmhgIz2r5F6pqa3ML",
+        "frameId": null,
+        "options": {
+          "A": {
+            "frameId": "12:2"
+          },
+          "B": {
+            "frameId": "13:2"
+          },
+          "C": {
+            "frameId": "14:2"
+          }
+        }
+      },
+      "layoutMode": "document-scroll",
+      "designAnchors": {
+        "title": [
+          "DS Monitor"
+        ],
+        "period": [
+          "2026.04 ~ 2026.05"
+        ],
+        "summary": [
+          "디자인 시스템 적용률을 정량 측정하는 오픈소스 npm 패키지. 실제 프로젝트에 적용해 Figma 경고 116건을 38건으로 줄였다."
+        ],
+        "roles": [
+          "기획",
+          "디자인",
+          "개발"
+        ],
+        "stack": [
+          "Claude Code",
+          "TypeScript",
+          "Figma REST API",
+          "Lighthouse",
+          "PostCSS"
+        ],
+        "links": [
+          "GitHub",
+          "npm"
+        ],
+        "sections": [
+          "요약",
+          "문제",
+          "설계와 결정",
+          "성과",
+          "기술"
+        ],
+        "gallery": [
+          "기획 — 측정 레이어 3단 흐름도",
+          "대시보드 — UI 건강 상태 리뷰 화면"
+        ],
+        "nav": [
+          "프로젝트로 돌아가기"
+        ]
+      },
+      "code": {
+        "files": [],
+        "anchors": [],
+        "orderedArray": null
+      },
+      "checkLayout": {
+        "A": 0,
+        "B": 0,
+        "C": "재검사"
+      }
+    }
+  },
+  "proposedLabels": [
+    "전체 (제안)",
+    "역할 (제안)",
+    "FILTER (제안)",
+    "스킬 묶음 이름 5개 (제안)",
+    "새 창에서 보기 ↗ / OPEN ↗ / 열기 ↗ — 링크·상세가 없는 카드의 썸네일 동작 라벨",
+    "FIG. 01/02 — 갤러리 번호",
+    "← Inspector / Mnemosure → — 앞뒤 프로젝트 이동"
+  ]
+}

@@ -1,0 +1,91 @@
+/*
+ * 디자인 토큰 — Figma 시안 C(어두운 전시장형, 파일 JOuIRHmhgIz2r5F6pqa3ML node 4-65 / 14-2)에서 옮긴 값.
+ * 화면 코드는 이 변수만 쓴다. 색(hex)·px 직접 사용은 이 파일 밖에서 금지 (scripts/check-tokens.mjs 로 검사).
+ * 허용 예외: 1px 머리카락 선, 2px 초점 테두리.
+ */
+:root {
+  /* 색 */
+  --pf-color-bg: #0e0f12;
+  --pf-color-surface: #17181d;
+  --pf-color-text: #ecece6;
+  --pf-color-muted: #8a8c94;
+  --pf-color-line: #262830;
+  --pf-color-accent: #9cc7ff;
+  --pf-color-thumb: #23252c;
+  --pf-color-on-accent: #0e0f12;
+  --pf-color-scrim: rgb(14 15 18 / 0.92);
+
+  /* 글꼴 */
+  --pf-font-display: "Archivo", "Pretendard Variable", "Pretendard", system-ui, sans-serif;
+  --pf-font-body: "Pretendard Variable", "Pretendard", -apple-system, "Apple SD Gothic Neo", system-ui, sans-serif;
+  --pf-font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --pf-weight-display: 800;
+  --pf-weight-regular: 400;
+  --pf-weight-medium: 500;
+  --pf-weight-semibold: 600;
+
+  /* 글자 크기 (시안 기준 px → rem) */
+  --pf-text-2xs: 0.6875rem; /* 11 */
+  --pf-text-xs: 0.75rem; /* 12 */
+  --pf-text-sm: 0.8125rem; /* 13 */
+  --pf-text-base: 0.9375rem; /* 15 */
+  --pf-text-md: 1.0625rem; /* 17 */
+  --pf-text-lg: 1.25rem; /* 20 */
+  --pf-text-xl: 1.5rem; /* 24 */
+  --pf-text-2xl: 1.75rem; /* 28 */
+  --pf-text-3xl: clamp(1.75rem, 2.5vw, 2.25rem); /* 36 */
+  --pf-text-4xl: clamp(2.5rem, 5vw, 4.5rem); /* 72 */
+  --pf-text-5xl: clamp(3rem, 8.3vw, 7.5rem); /* 120 (상세 제목) */
+  --pf-text-hero: clamp(3.5rem, 10.5vw, 9.5rem); /* 152 (홈 이름) */
+
+  /* 줄 간격 · 자간 */
+  --pf-line-tight: 0.92;
+  --pf-line-snug: 1.1;
+  --pf-line-heading: 1.3;
+  --pf-line-normal: 1.5;
+  --pf-line-relaxed: 1.65;
+  --pf-line-loose: 1.8;
+  --pf-tracking-tight: -0.04em;
+  --pf-tracking-snug: -0.02em;
+  --pf-tracking-wide: 0.1em;
+  --pf-tracking-wider: 0.14em;
+
+  /* 간격 */
+  --pf-space-1: 0.25rem; /* 4 */
+  --pf-space-2: 0.5rem; /* 8 */
+  --pf-space-3: 0.75rem; /* 12 */
+  --pf-space-4: 1rem; /* 16 */
+  --pf-space-5: 1.25rem; /* 20 */
+  --pf-space-6: 1.5rem; /* 24 */
+  --pf-space-8: 2rem; /* 32 */
+  --pf-space-10: 2.5rem; /* 40 */
+  --pf-space-12: 3rem; /* 48 */
+  --pf-space-16: 4rem; /* 64 */
+  --pf-space-20: 5rem; /* 80 */
+  --pf-space-24: 6rem; /* 96 */
+
+  /* 크기 */
+  --pf-size-container: 1312px;
+  --pf-gutter: clamp(1.25rem, 4.45vw, 4rem); /* 20 → 64 */
+  --pf-size-header: 5rem; /* 80 */
+  --pf-size-control: 2.5rem; /* 40 — 버튼·칩 높이 */
+  --pf-size-dot: 6px;
+  --pf-size-hero-media: min(520px, 52vh);
+  --pf-size-thumb-ratio: 2 / 1;
+  --pf-size-design-ratio: 850 / 1000;
+  --pf-size-gallery-ratio: 1920 / 1079;
+
+  /* 모서리 · 선 */
+  --pf-radius-sm: 6px;
+  --pf-radius-md: 8px;
+  --pf-radius-pill: 999px;
+  --pf-hairline: 1px;
+  --pf-focus-ring: 2px;
+  --pf-blur: 12px;
+  --pf-blur-strong: 16px;
+
+  /* 움직임 */
+  --pf-duration: 200ms;
+  --pf-duration-slow: 900ms;
+  --pf-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

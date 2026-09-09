@@ -1,0 +1,102 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  /** 사이트 기준 절대 경로 또는 완전한 주소 */
+  ogImage?: string;
+  ogType?: "website" | "article";
+  /** 머리말에서 강조할 구간 (홈에서는 스크롤에 따라 자동 갱신) */
+  current?: "home" | "projects" | "work" | "skills" | "";
+}
+
+const {
+  title,
+  description,
+  ogImage = "/images/html_meta/thumbnail.png",
+  ogType = "website",
+  current = "",
+} = Astro.props;
+
+const site = Astro.site ?? new URL("https://jsiksn.github.io");
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImageAbs = new URL(ogImage, site).href;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="j. sik" />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:site_name" content="j. sik" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageAbs} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbs} />
+
+    <meta name="google-site-verification" content="Ld6Eni1KKIcAuYBeRXxr3tyn8axSkFSxi5b56HerduQ" />
+    <meta name="naver-site-verification" content="68a9efa5aaa682acec45e726b59f8c9432a3e1b7" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/images/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#0e0f12" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <Header current={current} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: var(--pf-space-2);
+    left: var(--pf-space-2);
+    z-index: 100;
+    padding: var(--pf-space-2) var(--pf-space-3);
+    background: var(--pf-color-accent);
+    color: var(--pf-color-on-accent);
+    font-family: var(--pf-font-mono);
+    font-size: var(--pf-text-xs);
+    border-radius: var(--pf-radius-sm);
+    transform: translateY(-200%);
+  }
+  .skip-link:focus {
+    transform: none;
+  }
+</style>
