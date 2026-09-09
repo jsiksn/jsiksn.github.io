@@ -27,5 +27,25 @@
       "url": "https://www.figma.com/design/Ei4ol01y3etwluA13I8RaO/BMD?node-id=0-1&t=ZccP76hUWm2LiWbA-1"
     }
   ],
-  "archived": true
+  "archived": true,
+  "gallery": [
+    {
+      "src": "/images/details/byeolmadang-library/01.webp",
+      "caption": "기획 — 브레인스토밍·포지셔닝 맵·사용자 분석·무드보드",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/byeolmadang-library/02.webp",
+      "caption": "와이어프레임",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/byeolmadang-library/03.webp",
+      "caption": "디자인 — 페이지 5종",
+      "width": 1920,
+      "height": 1079
+    }
+  ]
 }

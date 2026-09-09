@@ -2,7 +2,8 @@
   "slug": "blog-automation",
   "title": "Blog Automation",
   "order": 8,
-  "year": null,
+  "year": 2026,
+  "period": "2026.02 ~ 2026.05 (약 4개월 가동)",
   "roles": [
     "기획",
     "구현"
@@ -10,9 +11,23 @@
   "stack": [
     "n8n"
   ],
-  "summary": null,
+  "summary": "Hacker News의 조기 트렌드를 자동 감지해 한국어 블로그 글로 가공·발행하는 28노드 자동화 파이프라인.",
   "thumbnail": "/images/projects/p21_n8n.png",
   "url": "https://jsiksn.tistory.com/category/Tech%20%26%20Science",
   "links": [],
-  "archived": false
+  "archived": false,
+  "gallery": [
+    {
+      "src": "/images/details/blog-automation/01.webp",
+      "caption": "기획 — 워크플로우 4단계 흐름",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/blog-automation/02.webp",
+      "caption": "워크플로우 — n8n 실제 노드 구성",
+      "width": 1920,
+      "height": 1079
+    }
+  ]
 }

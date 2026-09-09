@@ -2,7 +2,8 @@
   "slug": "broker-rogue",
   "title": "Broker Rogue",
   "order": 6,
-  "year": null,
+  "year": 2026,
+  "period": "2026.03 ~ 2026.04",
   "roles": [
     "기획",
     "디자인",
@@ -15,7 +16,7 @@
     "TypeScript",
     "Zustand"
   ],
-  "summary": null,
+  "summary": "매매를 '카드 한 번 탭'으로 추상화한 모바일·웹 게임 프로토타입. 복잡한 인터랙션을 UX 관점에서 단순화하는 실험.",
   "thumbnail": "/images/projects/p18_broker-rogue.jpg",
   "url": "https://jsiksn.github.io/broker-rogue/",
   "links": [],

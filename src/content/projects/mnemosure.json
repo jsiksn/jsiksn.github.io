@@ -2,7 +2,8 @@
   "slug": "mnemosure",
   "title": "Mnemosure",
   "order": 5,
-  "year": null,
+  "year": 2026,
+  "period": "2026.06 ~ 2026.07 (운영 중)",
   "roles": [
     "기획",
     "설계",
@@ -14,7 +15,7 @@
     "MCP",
     "Embedding Search"
   ],
-  "summary": null,
+  "summary": "AI 에이전트가 세션을 넘겨도 결정과 그 이유를 기억하되, 모르면 모른다고 답하고, 아는 것은 출처를 인용하며, 사실이 바뀌면 스스로 정정하는 메모리 레이어. MCP 표준 서버.",
   "thumbnail": "/images/projects/p22_mnemosure.png",
   "url": "https://github.com/jsiksn/mnemosure",
   "links": [
@@ -23,5 +24,19 @@
       "url": "https://pypi.org/project/mnemosure/"
     }
   ],
-  "archived": false
+  "archived": false,
+  "gallery": [
+    {
+      "src": "/images/details/mnemosure/01.webp",
+      "caption": "기획 — 기억(remember)·회상(recall) 파이프라인",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/mnemosure/02.webp",
+      "caption": "데모 — 세션별 회상 곡선과 시스템별 비교",
+      "width": 1920,
+      "height": 1079
+    }
+  ]
 }
