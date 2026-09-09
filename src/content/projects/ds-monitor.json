@@ -1,0 +1,28 @@
+{
+  "slug": "ds-monitor",
+  "title": "DS Monitor",
+  "order": 4,
+  "year": null,
+  "roles": [
+    "기획",
+    "디자인",
+    "개발"
+  ],
+  "stack": [
+    "Claude Code",
+    "TypeScript",
+    "Figma REST API",
+    "Lighthouse",
+    "PostCSS"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p20_ds-monitor.png",
+  "url": "https://github.com/jsiksn/dsmonitor",
+  "links": [
+    {
+      "label": "npm",
+      "url": "https://www.npmjs.com/package/dsmonitor"
+    }
+  ],
+  "archived": false
+}

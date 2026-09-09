@@ -1,0 +1,18 @@
+{
+  "slug": "the-convention",
+  "title": "더컨벤션",
+  "order": 1,
+  "year": null,
+  "roles": [
+    "디자인"
+  ],
+  "stack": [
+    "Illustrator",
+    "Photoshop"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p11_convention.jpg",
+  "url": "/images/design/the_convention.pdf",
+  "links": [],
+  "archived": false
+}

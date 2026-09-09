@@ -1,0 +1,20 @@
+{
+  "slug": "hybrid-rag-chatbot",
+  "title": "Hybrid RAG Chatbot",
+  "order": 7,
+  "year": null,
+  "roles": [
+    "기획",
+    "개발"
+  ],
+  "stack": [
+    "Python",
+    "Streamlit",
+    "HuggingFace Embeddings"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p19_hybrid-rag-chatbot.png",
+  "url": "https://github.com/jsiksn/rag-chatbot-study",
+  "links": [],
+  "archived": false
+}

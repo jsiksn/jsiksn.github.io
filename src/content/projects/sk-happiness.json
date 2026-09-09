@@ -1,0 +1,19 @@
+{
+  "slug": "sk-happiness",
+  "title": "행복나눔재단",
+  "order": 17,
+  "year": null,
+  "roles": [
+    "퍼블리싱"
+  ],
+  "stack": [
+    "HTML",
+    "CSS",
+    "jQuery"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p05_skhappiness.jpg",
+  "url": "/projects/skhappiness/",
+  "links": [],
+  "archived": true
+}

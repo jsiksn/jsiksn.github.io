@@ -1,0 +1,28 @@
+{
+  "slug": "portfolio-v1",
+  "title": "Portfolio",
+  "order": 11,
+  "year": null,
+  "roles": [
+    "기획",
+    "디자인",
+    "퍼블리싱"
+  ],
+  "stack": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Bootstrap",
+    "Font Awesome"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p13_portfolio.jpg",
+  "url": "/projects/portfolio/",
+  "links": [
+    {
+      "label": "Slide",
+      "url": "https://docs.google.com/presentation/d/1CAk3z52xFts4fdKo3SLpOx4TNngk8zwn6ZUsUYnYG8w/present?slide=id.p"
+    }
+  ],
+  "archived": true
+}

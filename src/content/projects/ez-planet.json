@@ -1,0 +1,27 @@
+{
+  "slug": "ez-planet",
+  "title": "EZ PLANET",
+  "order": 2,
+  "year": null,
+  "roles": [
+    "UIUX 기획",
+    "디자인",
+    "퍼블리싱"
+  ],
+  "stack": [
+    "JavaScript",
+    "React",
+    "SCSS",
+    "HTML"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p16_ez-planet.png",
+  "url": "https://laonpeople.com/ez-planet/",
+  "links": [
+    {
+      "label": "Figma",
+      "url": "https://www.figma.com/design/eOy4ZoqQTOrE0GvDsUWtMp/-Portfolio--Prototype?node-id=0-1&t=3eOJrw2oc2VOnpNA-1"
+    }
+  ],
+  "archived": false
+}

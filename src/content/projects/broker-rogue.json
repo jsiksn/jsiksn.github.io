@@ -1,0 +1,23 @@
+{
+  "slug": "broker-rogue",
+  "title": "Broker Rogue",
+  "order": 6,
+  "year": null,
+  "roles": [
+    "기획",
+    "디자인",
+    "개발"
+  ],
+  "stack": [
+    "Claude Code",
+    "Figma",
+    "React Native",
+    "TypeScript",
+    "Zustand"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p18_broker-rogue.jpg",
+  "url": "https://jsiksn.github.io/broker-rogue/",
+  "links": [],
+  "archived": false
+}

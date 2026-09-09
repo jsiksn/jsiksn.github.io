@@ -1,0 +1,31 @@
+{
+  "slug": "byeolmadang-library",
+  "title": "별마당도서관",
+  "order": 10,
+  "year": null,
+  "roles": [
+    "기획",
+    "디자인",
+    "퍼블리싱"
+  ],
+  "stack": [
+    "HTML",
+    "CSS",
+    "jQuery",
+    "slick"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p09_bmd.jpg",
+  "url": "/projects/bmd/",
+  "links": [
+    {
+      "label": "Slide",
+      "url": "https://docs.google.com/presentation/d/1gW7kN5hcgeul-cnpOcbcq5_5S2e5TqXCaDZxczgadJM/present?slide=id.p"
+    },
+    {
+      "label": "Figma",
+      "url": "https://www.figma.com/design/Ei4ol01y3etwluA13I8RaO/BMD?node-id=0-1&t=ZccP76hUWm2LiWbA-1"
+    }
+  ],
+  "archived": true
+}

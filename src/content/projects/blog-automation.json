@@ -1,0 +1,18 @@
+{
+  "slug": "blog-automation",
+  "title": "Blog Automation",
+  "order": 8,
+  "year": null,
+  "roles": [
+    "기획",
+    "구현"
+  ],
+  "stack": [
+    "n8n"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p21_n8n.png",
+  "url": "https://jsiksn.tistory.com/category/Tech%20%26%20Science",
+  "links": [],
+  "archived": false
+}
