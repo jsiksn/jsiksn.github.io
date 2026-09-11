@@ -41,7 +41,7 @@ const detailHref = `/projects/${project.id}/`;
           src={thumb}
           alt=""
           widths={[320, 480, 640, 960]}
-          sizes="(max-width: 37.5rem) calc(100vw - 2 * var(--pf-gutter)), (max-width: 56rem) 46vw, (max-width: 75rem) 30vw, 310px"
+          sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 896px) 46vw, (max-width: 1200px) 30vw, 310px"
           format="webp"
           quality={80}
           loading={index <= 4 ? "eager" : "lazy"}
