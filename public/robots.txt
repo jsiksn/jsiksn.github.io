@@ -9,6 +9,7 @@ Disallow: /projects/kcc/
 Disallow: /projects/lexus/
 Disallow: /projects/orion/
 Disallow: /projects/portfolio/
+Disallow: /projects/portfolio-v2/
 Disallow: /projects/samsungcard/
 Disallow: /projects/selecto/
 Disallow: /projects/skcareers/

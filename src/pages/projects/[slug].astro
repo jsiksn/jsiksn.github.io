@@ -4,7 +4,7 @@ import Base from "../../layouts/Base.astro";
 
 export async function getStaticPaths() {
   const details = await getCollection("projectDetails");
-  const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+  const projects = (await getCollection("projects", (p) => !p.data.hidden)).sort((a, b) => a.data.order - b.data.order);
   const withDetail = projects.filter((p) => details.some((d) => d.id === p.id));
   return withDetail.map((project, i) => ({
     params: { slug: project.id },

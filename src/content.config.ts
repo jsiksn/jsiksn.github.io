@@ -19,6 +19,8 @@ const projects = defineCollection({
       z.object({ label: z.string(), url: z.string(), download: z.boolean().optional() }),
     ),
     archived: z.boolean(),
+    /** 격자에서 감춤 — 삭제 대신 보존 (예: 옛 포트폴리오 v1) */
+    hidden: z.boolean().optional(),
     gallery: z
       .array(z.object({ src: z.string(), caption: z.string(), width: z.number(), height: z.number() }))
       .optional(),

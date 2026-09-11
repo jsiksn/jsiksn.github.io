@@ -6,7 +6,7 @@ import Projects from "../components/Projects.astro";
 import Work from "../components/Work.astro";
 import Skills from "../components/Skills.astro";
 
-const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+const projects = (await getCollection("projects", (p) => !p.data.hidden)).sort((a, b) => a.data.order - b.data.order);
 const detailIds = new Set((await getCollection("projectDetails")).map((d) => d.id));
 
 const title = "j. sik — Front-end Developer · Brand, Graphic, Editorial Designer";
