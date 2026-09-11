@@ -36,7 +36,7 @@
   --pf-text-3xl: clamp(1.75rem, 2.5vw, 2.25rem); /* 36 */
   --pf-text-4xl: clamp(2.5rem, 5vw, 4.5rem); /* 72 */
   --pf-text-5xl: clamp(3rem, 8.3vw, 7.5rem); /* 120 (상세 제목) */
-  --pf-text-hero: clamp(3.5rem, 10.5vw, 9.5rem); /* 152 (홈 이름) */
+  --pf-text-hero: clamp(3rem, 8.3vw, 7.5rem); /* 120 (홈 이름 — 152에서 줄임, 2026-09-11) */
 
   /* 줄 간격 · 자간 */
   --pf-line-tight: 0.92;

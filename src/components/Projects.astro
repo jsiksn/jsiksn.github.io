@@ -66,7 +66,7 @@ const roleFilters = ["기획", "UIUX 기획", "설계", "디자인", "퍼블리�
             <span class="more__arrow" aria-hidden="true" data-more-arrow>↓</span>
           </button>
           <p class="more__hint mono" data-more-hint>
-            {VISIBLE} / {projects.length} 표시 중 · 누르면 나머지 {extraCount}건이 아래로 펼쳐집니다
+            {VISIBLE} / {projects.length} 표시 중
           </p>
         </div>
       )
@@ -224,10 +224,7 @@ const roleFilters = ["기획", "UIUX 기획", "설계", "디자인", "퍼블리�
     if (moreBtn) moreBtn.setAttribute("aria-expanded", String(expanded));
     if (moreLabel) moreLabel.textContent = expanded ? "접기" : "더 보기";
     if (moreCount) moreCount.textContent = expanded ? "" : `+${extras.length}`;
-    if (moreHint)
-      moreHint.textContent = expanded
-        ? `${total} / ${total} 표시 중`
-        : `${total - extras.length} / ${total} 표시 중 · 누르면 나머지 ${extras.length}건이 아래로 펼쳐집니다`;
+    if (moreHint) moreHint.textContent = `${expanded ? total : total - extras.length} / ${total} 표시 중`;
   }
 
   function setRole(next: string, push = true) {
