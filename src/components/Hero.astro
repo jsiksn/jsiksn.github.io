@@ -44,8 +44,8 @@ const slides = [
     <div class="hero__aside">
       <p class="hero__intro">10년 이상의 팀장급 디자인 경력과 논리적 사고를 가진 디자이너 겸 개발자</p>
       <div class="hero__actions">
-        <a class="btn-pill" href="/#work">Work Experience ↗</a>
-        <a class="btn-pill" href="/documents/Portfolio_Developer_compressed.pdf" download>
+        <a class="btn-pill" href="/#work">Work Experience →</a>
+        <a class="link-mono" href="/documents/Portfolio_Developer_compressed.pdf" download>
           Development Portfolio ↓ <span class="muted">9.6MB</span>
         </a>
       </div>
@@ -128,7 +128,8 @@ const slides = [
   .hero__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--pf-space-3);
+    align-items: center;
+    gap: var(--pf-space-3) var(--pf-space-5);
   }
 
   @media (max-width: 47.99rem) {
