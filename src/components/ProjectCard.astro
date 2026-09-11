@@ -1,0 +1,198 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+  index: number;
+  hasDetail: boolean;
+  /** 8번째 이후 카드 — "더 보기" 전까지 숨김 */
+  extra?: boolean;
+}
+
+const { project, index, hasDetail, extra = false } = Astro.props;
+const { title, roles, stack, links, url, archived, thumbnail } = project.data;
+
+const thumbs = import.meta.glob<{ default: ImageMetadata }>("/src/assets/projects/*.{png,jpg}", { eager: true });
+const thumb = thumbs[thumbnail.replace("/images/projects/", "/src/assets/projects/")]?.default;
+
+const num = String(index).padStart(2, "0");
+const isExternal = /^https?:/.test(url);
+const detailHref = `/projects/${project.id}/`;
+---
+
+<li
+  class:list={["card", { "is-extra": extra }]}
+  data-project
+  data-roles={JSON.stringify(roles)}
+  hidden={extra ? true : undefined}
+>
+  <a
+    class="card__media"
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`${title} — 새 창에서 열기`}
+  >
+    {
+      thumb ? (
+        <Image
+          class="card__img"
+          src={thumb}
+          alt=""
+          widths={[320, 480, 640, 960]}
+          sizes="(max-width: 37.5rem) calc(100vw - 2 * var(--pf-gutter)), (max-width: 56rem) 46vw, (max-width: 75rem) 30vw, 310px"
+          format="webp"
+          quality={80}
+          loading={index <= 4 ? "eager" : "lazy"}
+          decoding="async"
+        />
+      ) : (
+        <span class="card__img card__img--empty" aria-hidden="true" />
+      )
+    }
+  </a>
+
+  <div class="card__body">
+    <div class="card__head">
+      <h3 class="card__title">{title}</h3>
+      <span class="card__index mono">{num}</span>
+    </div>
+    <p class="card__roles mono">{roles.join(" · ")}</p>
+    <p class="card__stack">{stack.join(", ")}</p>
+    <ul class="card__links" aria-label={`${title} 관련 링크`}>
+      {
+        links.map((l) => (
+          <li>
+            <a
+              class="link-mono"
+              href={l.url}
+              target={l.download ? undefined : "_blank"}
+              rel={l.download ? undefined : "noopener noreferrer"}
+              download={l.download ? true : undefined}
+            >
+              {l.label} {l.download ? "↓" : "↗"}
+            </a>
+          </li>
+        ))
+      }
+      {
+        hasDetail ? (
+          <li>
+            <a class="card__detail mono" href={detailHref}>
+              자세히 →
+            </a>
+          </li>
+        ) : (
+          links.length === 0 && (
+            <li>
+              <a class="link-mono muted" href={url} target="_blank" rel="noopener noreferrer">
+                {isExternal ? "열기 ↗" : "열기 ↗"}
+              </a>
+            </li>
+          )
+        )
+      }
+      {
+        archived && (
+          <li>
+            <span class="card__archived mono" title="퍼블리싱 연습 작업물입니다. 실제 서비스가 아닙니다.">
+              연습작
+            </span>
+          </li>
+        )
+      }
+    </ul>
+  </div>
+</li>
+
+<style>
+  .card {
+    display: grid;
+    gap: var(--pf-space-4);
+    min-width: 0;
+  }
+
+  .card__media {
+    display: block;
+    aspect-ratio: var(--pf-size-thumb-ratio);
+    overflow: hidden;
+    border-radius: var(--pf-radius-sm);
+    background: var(--pf-color-thumb);
+  }
+
+  .card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform var(--pf-duration-slow) var(--pf-ease);
+  }
+
+  .card__media:hover .card__img {
+    transform: scale(1.03);
+  }
+
+  .card__body {
+    display: grid;
+    gap: var(--pf-space-2);
+  }
+
+  .card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--pf-space-3);
+  }
+
+  .card__title {
+    font-size: var(--pf-text-md);
+    font-weight: var(--pf-weight-semibold);
+    line-height: var(--pf-line-heading);
+  }
+
+  .card__index {
+    flex-shrink: 0;
+    font-size: var(--pf-text-2xs);
+    color: var(--pf-color-muted);
+  }
+
+  .card__roles {
+    font-size: var(--pf-text-2xs);
+    letter-spacing: 0.02em;
+    color: var(--pf-color-accent);
+  }
+
+  .card__stack {
+    font-size: var(--pf-text-sm);
+    line-height: var(--pf-line-normal);
+    color: var(--pf-color-muted);
+  }
+
+  .card__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--pf-space-2) var(--pf-space-4);
+    padding-top: var(--pf-space-1);
+  }
+
+  .card__links .link-mono {
+    font-size: var(--pf-text-2xs);
+  }
+
+  .card__detail {
+    font-size: var(--pf-text-2xs);
+    font-weight: var(--pf-weight-medium);
+    color: var(--pf-color-accent);
+  }
+
+  .card__archived {
+    font-size: var(--pf-text-2xs);
+    color: var(--pf-color-muted);
+    border: var(--pf-hairline) solid var(--pf-color-line);
+    border-radius: var(--pf-radius-pill);
+    padding: 0 var(--pf-space-2);
+    cursor: help;
+  }
+</style>

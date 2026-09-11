@@ -1,0 +1,261 @@
+---
+import type { CollectionEntry } from "astro:content";
+import ProjectCard from "./ProjectCard.astro";
+
+interface Props {
+  projects: CollectionEntry<"projects">[];
+  detailIds: Set<string>;
+}
+
+const { projects, detailIds } = Astro.props;
+const VISIBLE = 8; // 처음 보이는 카드 수 (2줄 × 4열) — 결정 13
+const extraCount = Math.max(0, projects.length - VISIBLE);
+const roleFilters = ["기획", "UIUX 기획", "설계", "디자인", "퍼블리싱", "개발", "구현"];
+---
+
+<section class="section projects" id="projects" aria-labelledby="projects-title">
+  <div class="container projects__inner">
+    <div class="section__head">
+      <div class="section__title">
+        <p class="eyebrow">Projects — <span data-project-count>{projects.length}</span></p>
+        <h2 class="display h2" id="projects-title">Projects</h2>
+      </div>
+      <a class="link-mono" href="/documents/Portfolio_Developer_compressed.pdf" download>
+        Development Portfolio ↓ <span class="muted">9.6MB</span>
+      </a>
+    </div>
+
+    <div class="filters" role="group" aria-label="역할로 거르기" data-filters>
+      <span class="filters__label mono">역할</span>
+      <button class="filter is-active" type="button" data-role="" aria-pressed="true">전체</button>
+      {
+        roleFilters.map((r) => (
+          <button class="filter" type="button" data-role={r} aria-pressed="false">
+            {r}
+          </button>
+        ))
+      }
+    </div>
+
+    <ul class="grid" data-project-grid>
+      {
+        projects.map((p, i) => (
+          <ProjectCard project={p} index={i + 1} hasDetail={detailIds.has(p.id)} extra={i >= VISIBLE} />
+        ))
+      }
+    </ul>
+    <noscript>
+      <style>
+        .card.is-extra {
+          display: grid !important;
+        }
+        .more {
+          display: none !important;
+        }
+      </style>
+    </noscript>
+
+    <p class="grid__empty mono" data-project-empty hidden>이 역할로 진행한 프로젝트가 없습니다.</p>
+
+    {
+      extraCount > 0 && (
+        <div class="more" data-more>
+          <button class="btn-pill btn-pill--surface more__btn" type="button" aria-expanded="false" data-more-btn>
+            <span class="more__label" data-more-label>더 보기</span>
+            <span class="more__count" data-more-count>+{extraCount}</span>
+            <span class="more__arrow" aria-hidden="true" data-more-arrow>↓</span>
+          </button>
+          <p class="more__hint mono" data-more-hint>
+            {VISIBLE} / {projects.length} 표시 중 · 누르면 나머지 {extraCount}건이 아래로 펼쳐집니다
+          </p>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .projects__inner {
+    display: grid;
+    gap: var(--pf-space-10);
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--pf-space-2);
+  }
+
+  .filters__label {
+    font-size: var(--pf-text-2xs);
+    letter-spacing: var(--pf-tracking-wide);
+    color: var(--pf-color-muted);
+    margin-inline-end: var(--pf-space-2);
+  }
+
+  .filter {
+    display: inline-flex;
+    align-items: center;
+    min-height: calc(var(--pf-size-control) - var(--pf-space-2));
+    padding: 0 var(--pf-space-3);
+    border-radius: var(--pf-radius-pill);
+    background: var(--pf-color-surface);
+    font-size: var(--pf-text-xs);
+    color: var(--pf-color-text);
+    transition:
+      background-color var(--pf-duration) var(--pf-ease),
+      color var(--pf-duration) var(--pf-ease);
+  }
+
+  .filter:hover {
+    background: var(--pf-color-line);
+  }
+
+  .filter.is-active {
+    background: var(--pf-color-text);
+    color: var(--pf-color-bg);
+    font-weight: var(--pf-weight-semibold);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--pf-space-8) var(--pf-space-6);
+  }
+
+  .grid__empty {
+    font-size: var(--pf-text-sm);
+    color: var(--pf-color-muted);
+  }
+
+  .more {
+    display: grid;
+    justify-items: center;
+    gap: var(--pf-space-3);
+    padding-top: var(--pf-space-2);
+  }
+
+  .more__btn {
+    padding-inline: var(--pf-space-6);
+    min-height: calc(var(--pf-size-control) + var(--pf-space-2));
+  }
+
+  .more__label {
+    font-family: var(--pf-font-body);
+    font-size: var(--pf-text-base);
+    font-weight: var(--pf-weight-semibold);
+  }
+
+  .more__count {
+    color: var(--pf-color-accent);
+    font-weight: var(--pf-weight-medium);
+  }
+
+  .more__btn[aria-expanded="true"] .more__arrow {
+    display: inline-block;
+    transform: rotate(180deg);
+  }
+
+  .more__hint {
+    font-size: var(--pf-text-2xs);
+    letter-spacing: 0.01em;
+    color: var(--pf-color-muted);
+    text-align: center;
+  }
+
+  @media (max-width: 75rem) {
+    .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 56rem) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 37.5rem) {
+    .grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>
+
+<script>
+  const grid = document.querySelector<HTMLElement>("[data-project-grid]");
+  const cards = Array.from(grid?.querySelectorAll<HTMLElement>("[data-project]") ?? []);
+  const filters = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-filters] .filter"));
+  const countEl = document.querySelector<HTMLElement>("[data-project-count]");
+  const emptyEl = document.querySelector<HTMLElement>("[data-project-empty]");
+  const more = document.querySelector<HTMLElement>("[data-more]");
+  const moreBtn = more?.querySelector<HTMLButtonElement>("[data-more-btn]");
+  const moreLabel = more?.querySelector<HTMLElement>("[data-more-label]");
+  const moreCount = more?.querySelector<HTMLElement>("[data-more-count]");
+  const moreHint = more?.querySelector<HTMLElement>("[data-more-hint]");
+  const total = cards.length;
+  const extras = cards.filter((c) => c.classList.contains("is-extra"));
+
+  let expanded = false;
+  let role = "";
+
+  function rolesOf(card: HTMLElement): string[] {
+    try {
+      return JSON.parse(card.dataset.roles ?? "[]");
+    } catch {
+      return [];
+    }
+  }
+
+  // 규칙: 역할을 고르면 접힘과 상관없이 해당 프로젝트 전부 표시. "전체"일 때만 접기/더 보기 적용.
+  function apply() {
+    let shown = 0;
+    cards.forEach((card) => {
+      const match = !role || rolesOf(card).includes(role);
+      const collapsed = !role && !expanded && card.classList.contains("is-extra");
+      const visible = match && !collapsed;
+      card.hidden = !visible;
+      if (match) shown++;
+    });
+    if (countEl) countEl.textContent = String(role ? shown : total);
+    if (emptyEl) emptyEl.hidden = shown > 0;
+    if (more) more.hidden = Boolean(role) || extras.length === 0;
+    if (moreBtn) moreBtn.setAttribute("aria-expanded", String(expanded));
+    if (moreLabel) moreLabel.textContent = expanded ? "접기" : "더 보기";
+    if (moreCount) moreCount.textContent = expanded ? "" : `+${extras.length}`;
+    if (moreHint)
+      moreHint.textContent = expanded
+        ? `${total} / ${total} 표시 중`
+        : `${total - extras.length} / ${total} 표시 중 · 누르면 나머지 ${extras.length}건이 아래로 펼쳐집니다`;
+  }
+
+  function setRole(next: string, push = true) {
+    role = next;
+    filters.forEach((b) => {
+      const on = (b.dataset.role ?? "") === role;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", String(on));
+    });
+    if (push) {
+      const url = new URL(location.href);
+      if (role) url.searchParams.set("role", role);
+      else url.searchParams.delete("role");
+      history.replaceState(null, "", url);
+    }
+    apply();
+  }
+
+  filters.forEach((b) => b.addEventListener("click", () => setRole(b.dataset.role ?? "")));
+
+  moreBtn?.addEventListener("click", () => {
+    expanded = !expanded;
+    apply();
+    if (!expanded) grid?.scrollIntoView({ block: "start" });
+  });
+
+  // 주소에 남은 조건 복원 (?role=디자인)
+  const initial = new URL(location.href).searchParams.get("role") ?? "";
+  if (initial && filters.some((b) => b.dataset.role === initial)) setRole(initial, false);
+  else apply();
+</script>

@@ -1,0 +1,93 @@
+---
+const contacts = [
+  { label: "GitHub ↗", href: "https://github.com/jsiksn", title: "GitHub" },
+  { label: "StackBlitz ↗", href: "https://stackblitz.com/@jsiksn/collections/react", title: "StackBlitz" },
+  { label: "CodePen ↗", href: "https://codepen.io/jsik", title: "CodePen" },
+  { label: "jsiksn@gmail.com", href: "mailto:jsiksn@gmail.com", title: "메일 보내기" },
+];
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__top">
+      <div class="site-footer__notice">
+        <p class="eyebrow">Notice</p>
+        <p class="site-footer__text">
+          이 사이트의 Projects 내 작업물은 실제 사이트가 아니므로<br />이용에 주의하시기 바랍니다.
+        </p>
+      </div>
+      <ul class="site-footer__links" aria-label="연락처">
+        {
+          contacts.map((c) => (
+            <li>
+              <a
+                class="chip"
+                href={c.href}
+                title={c.title}
+                target={c.href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={c.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+              >
+                {c.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__copy mono">Copyright 2026. j. sik all rights reserved.</p>
+      <p class="site-footer__logo display" aria-hidden="true">j. sik</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: var(--pf-hairline) solid var(--pf-color-line);
+    padding-block: var(--pf-space-12) var(--pf-space-16);
+  }
+
+  .site-footer__inner {
+    display: grid;
+    gap: var(--pf-space-8);
+  }
+
+  .site-footer__top,
+  .site-footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--pf-space-8);
+    flex-wrap: wrap;
+  }
+
+  .site-footer__bottom {
+    align-items: flex-end;
+  }
+
+  .site-footer__notice {
+    display: grid;
+    gap: var(--pf-space-2);
+  }
+
+  .site-footer__text {
+    font-size: var(--pf-text-sm);
+    line-height: var(--pf-line-relaxed);
+    color: var(--pf-color-muted);
+  }
+
+  .site-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--pf-space-2);
+  }
+
+  .site-footer__copy {
+    font-size: var(--pf-text-xs);
+    color: var(--pf-color-muted);
+  }
+
+  .site-footer__logo {
+    font-size: var(--pf-text-3xl);
+  }
+</style>

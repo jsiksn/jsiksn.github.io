@@ -1,0 +1,234 @@
+---
+interface Props {
+  current?: string;
+}
+const { current = "" } = Astro.props;
+
+const items = [
+  { label: "HOME", href: "/#home", key: "home" },
+  { label: "PROJECTS", href: "/#projects", key: "projects" },
+  { label: "WORK", href: "/#work", key: "work" },
+  { label: "SKILLS", href: "/#skills", key: "skills" },
+];
+---
+
+<header class="site-header" data-header>
+  <div class="container site-header__row">
+    <a class="site-header__logo display" href="/" aria-label="j. sik — 홈으로">j. sik</a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="메뉴 열기"
+      data-nav-toggle
+    >
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="주 메뉴" data-nav>
+      <ul class="site-nav__list">
+        {
+          items.map((item) => (
+            <li>
+              <a
+                class="site-nav__link"
+                href={item.href}
+                data-nav-link={item.key}
+                aria-current={current === item.key ? "location" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--pf-color-scrim);
+    backdrop-filter: blur(var(--pf-blur));
+  }
+
+  .site-header__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--pf-size-header);
+  }
+
+  .site-header__logo {
+    font-size: var(--pf-text-xl);
+    letter-spacing: var(--pf-tracking-snug);
+  }
+
+  .site-nav__list {
+    display: flex;
+    gap: var(--pf-space-8);
+  }
+
+  .site-nav__link {
+    display: inline-block;
+    padding-block: var(--pf-space-2);
+    font-family: var(--pf-font-mono);
+    font-size: var(--pf-text-xs);
+    letter-spacing: var(--pf-tracking-wide);
+    color: var(--pf-color-muted);
+    transition: color var(--pf-duration) var(--pf-ease);
+  }
+
+  .site-nav__link:hover,
+  .site-nav__link[aria-current] {
+    color: var(--pf-color-accent);
+  }
+
+  .nav-toggle {
+    display: none;
+    position: relative;
+    z-index: 2;
+    width: var(--pf-size-control);
+    height: var(--pf-size-control);
+    border-radius: var(--pf-radius-pill);
+    border: var(--pf-hairline) solid var(--pf-color-line);
+  }
+
+  .nav-toggle__bar {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: var(--pf-color-text);
+    transition: transform var(--pf-duration) var(--pf-ease);
+  }
+
+  .nav-toggle__bar:first-child {
+    top: calc(50% - var(--pf-space-1));
+  }
+
+  .nav-toggle__bar:last-child {
+    top: calc(50% + var(--pf-space-1) - 2px);
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:first-child {
+    transform: translateY(var(--pf-space-1)) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:last-child {
+    transform: translateY(calc(-1 * var(--pf-space-1) + 2px)) rotate(-45deg);
+  }
+
+  /* 좁은 화면: 메뉴는 전체 화면 덮개 */
+  @media (max-width: 47.99rem) {
+    .nav-toggle {
+      display: inline-flex;
+    }
+
+    .site-nav {
+      position: fixed;
+      inset: 0;
+      display: none;
+      background: var(--pf-color-scrim);
+      backdrop-filter: blur(var(--pf-blur-strong));
+    }
+
+    .site-nav[data-open] {
+      display: grid;
+      place-items: center;
+    }
+
+    .site-nav__list {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--pf-space-6);
+    }
+
+    .site-nav__link {
+      font-size: var(--pf-text-xl);
+      color: var(--pf-color-text);
+    }
+  }
+</style>
+
+<script>
+  const header = document.querySelector<HTMLElement>("[data-header]");
+  const toggle = header?.querySelector<HTMLButtonElement>("[data-nav-toggle]");
+  const nav = header?.querySelector<HTMLElement>("[data-nav]");
+  const links = Array.from(header?.querySelectorAll<HTMLAnchorElement>("[data-nav-link]") ?? []);
+
+  // ---- 좁은 화면 메뉴 열기/닫기 (Esc, 링크 클릭, 초점 가두기) ----
+  function setOpen(open: boolean) {
+    if (!toggle || !nav) return;
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+    if (open) nav.setAttribute("data-open", "");
+    else nav.removeAttribute("data-open");
+    document.documentElement.style.overflow = open ? "hidden" : "";
+    if (open) links[0]?.focus();
+  }
+
+  toggle?.addEventListener("click", () => setOpen(toggle.getAttribute("aria-expanded") !== "true"));
+  links.forEach((a) => a.addEventListener("click", () => setOpen(false)));
+
+  document.addEventListener("keydown", (e) => {
+    if (!nav?.hasAttribute("data-open")) return;
+    if (e.key === "Escape") {
+      setOpen(false);
+      toggle?.focus();
+      return;
+    }
+    if (e.key === "Tab") {
+      const focusables = [toggle, ...links].filter(Boolean) as HTMLElement[];
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  const mq = window.matchMedia("(min-width: 48rem)");
+  mq.addEventListener("change", () => {
+    if (mq.matches) setOpen(false);
+  });
+
+  // ---- 홈에서 보고 있는 구간 표시 ----
+  const sections = links
+    .map((a) => document.getElementById(a.dataset.navLink ?? ""))
+    .filter((s): s is HTMLElement => Boolean(s));
+
+  if (sections.length && "IntersectionObserver" in window) {
+    const visible = new Map<string, number>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) visible.set(e.target.id, e.isIntersecting ? e.intersectionRatio : 0);
+        let best = "";
+        let bestRatio = 0;
+        for (const [id, ratio] of visible) {
+          if (ratio > bestRatio) {
+            best = id;
+            bestRatio = ratio;
+          }
+        }
+        if (!best) return;
+        links.forEach((a) => {
+          if (a.dataset.navLink === best) a.setAttribute("aria-current", "location");
+          else a.removeAttribute("aria-current");
+        });
+      },
+      { rootMargin: "-20% 0px -55% 0px", threshold: [0, 0.1, 0.25, 0.5] },
+    );
+    sections.forEach((s) => io.observe(s));
+  }
+</script>

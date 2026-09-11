@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import Projects from "../components/Projects.astro";
+import Work from "../components/Work.astro";
+import Skills from "../components/Skills.astro";
+
+const projects = (await getCollection("projects", (p) => !p.data.hidden)).sort((a, b) => a.data.order - b.data.order);
+const detailIds = new Set((await getCollection("projectDetails")).map((d) => d.id));
+
+const title = "j. sik — Front-end Developer · Brand, Graphic, Editorial Designer";
+const description =
+  "10년 이상의 팀장급 디자인 경력과 논리적 사고를 가진 디자이너 겸 개발자 j. sik의 포트폴리오. 기획·설계·디자인·퍼블리싱·개발 프로젝트 21건.";
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "j. sik",
+  url: "https://jsiksn.github.io/",
+  jobTitle: "Front-end Developer",
+  description: "Brand · Graphic · Editorial Designer",
+  email: "mailto:jsiksn@gmail.com",
+  sameAs: [
+    "https://github.com/jsiksn",
+    "https://stackblitz.com/@jsiksn/collections/react",
+    "https://codepen.io/jsik",
+  ],
+};
+---
+
+<Base title={title} description={description} current="home">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(person)} is:inline />
+  </Fragment>
+  <Hero />
+  <Projects projects={projects} detailIds={detailIds} />
+  <Work />
+  <Skills />
+</Base>

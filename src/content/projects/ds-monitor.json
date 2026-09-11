@@ -1,0 +1,43 @@
+{
+  "slug": "ds-monitor",
+  "title": "DS Monitor",
+  "order": 4,
+  "year": 2026,
+  "period": "2026.04 ~ 2026.05",
+  "roles": [
+    "기획",
+    "디자인",
+    "개발"
+  ],
+  "stack": [
+    "Claude Code",
+    "TypeScript",
+    "Figma REST API",
+    "Lighthouse",
+    "PostCSS"
+  ],
+  "summary": "디자인 시스템 적용률을 정량 측정하는 오픈소스 npm 패키지. 실제 프로젝트에 적용해 Figma 경고 116건을 38건으로 줄였다.",
+  "thumbnail": "/images/projects/p20_ds-monitor.png",
+  "url": "https://github.com/jsiksn/dsmonitor",
+  "links": [
+    {
+      "label": "npm",
+      "url": "https://www.npmjs.com/package/dsmonitor"
+    }
+  ],
+  "archived": false,
+  "gallery": [
+    {
+      "src": "/images/details/ds-monitor/01.webp",
+      "caption": "기획 — 측정 레이어 3단 흐름도",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ds-monitor/02.webp",
+      "caption": "대시보드 — UI 건강 상태 리뷰 화면",
+      "width": 1920,
+      "height": 1079
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "slug": "ez-planet",
+  "title": "EZ PLANET",
+  "order": 2,
+  "year": null,
+  "roles": [
+    "UIUX 기획",
+    "디자인",
+    "퍼블리싱"
+  ],
+  "stack": [
+    "JavaScript",
+    "React",
+    "SCSS",
+    "HTML"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p16_ez-planet.png",
+  "url": "https://laonpeople.com/ez-planet/",
+  "links": [
+    {
+      "label": "Figma",
+      "url": "https://www.figma.com/design/eOy4ZoqQTOrE0GvDsUWtMp/-Portfolio--Prototype?node-id=0-1&t=3eOJrw2oc2VOnpNA-1"
+    }
+  ],
+  "archived": false,
+  "gallery": [
+    {
+      "src": "/images/details/ez-planet/01.webp",
+      "caption": "프로토타입 — Content Group 목록",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/02.webp",
+      "caption": "프로토타입 — Content Group 만들기(스키마 설정)",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/03.webp",
+      "caption": "프로토타입 — 레코드 목록",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/04.webp",
+      "caption": "프로토타입 — Scheduler",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/05.webp",
+      "caption": "프로토타입 — Collector 만들기",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/06.webp",
+      "caption": "프로토타입 — Labeling(데이터셋·정책)",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/07.webp",
+      "caption": "프로토타입 — 라벨링 편집 화면",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/08.webp",
+      "caption": "프로토타입 — Experiment 목록",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/09.webp",
+      "caption": "프로토타입 — Experiment 상세(학습 결과)",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/10.webp",
+      "caption": "프로토타입 — Content Group에서 레코드 가져오기",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/11.webp",
+      "caption": "Storybook — 공통 컴포넌트",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/12.webp",
+      "caption": "정책 문서 — 입력 검증 명세",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/13.webp",
+      "caption": "정책 문서 — Content Management UI 정책",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/14.webp",
+      "caption": "디자인 시스템 — Icon",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/15.webp",
+      "caption": "디자인 시스템 — Button",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/16.webp",
+      "caption": "디자인 시스템 — Form",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/17.webp",
+      "caption": "프로토타입 — 화면 흐름(Report)",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/18.webp",
+      "caption": "프로토타입 — 관리자 정보 입력",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/19.webp",
+      "caption": "프로토타입 — Report 관리",
+      "width": 1920,
+      "height": 1079
+    },
+    {
+      "src": "/images/details/ez-planet/20.webp",
+      "caption": "프로토타입 — Report Template",
+      "width": 1920,
+      "height": 1079
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+# 옛 퍼블리싱 데모 14개 폴더는 색인에서 제외
+Disallow: /projects/bmd/
+Disallow: /projects/coway/
+Disallow: /projects/inspector/
+Disallow: /projects/jisan/
+Disallow: /projects/kcc/
+Disallow: /projects/lexus/
+Disallow: /projects/orion/
+Disallow: /projects/portfolio/
+Disallow: /projects/portfolio-v2/
+Disallow: /projects/samsungcard/
+Disallow: /projects/selecto/
+Disallow: /projects/skcareers/
+Disallow: /projects/skhappiness/
+Disallow: /projects/spigen/
+Disallow: /projects/vnc/
+
+Sitemap: https://jsiksn.github.io/sitemap-index.xml

@@ -1,0 +1,21 @@
+{
+  "slug": "spigen-korea",
+  "title": "슈피겐코리아",
+  "order": 13,
+  "year": null,
+  "roles": [
+    "퍼블리싱"
+  ],
+  "stack": [
+    "HTML",
+    "SCSS",
+    "jQuery",
+    "fullPage",
+    "slick"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p10_spigen.jpg",
+  "url": "/projects/spigen/",
+  "links": [],
+  "archived": true
+}

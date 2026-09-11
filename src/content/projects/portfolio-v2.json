@@ -1,0 +1,24 @@
+{
+  "slug": "portfolio-v2",
+  "title": "Portfolio",
+  "order": 11,
+  "year": null,
+  "roles": [
+    "기획",
+    "디자인",
+    "퍼블리싱"
+  ],
+  "stack": [
+    "HTML",
+    "SCSS",
+    "jQuery",
+    "fullPage",
+    "slick",
+    "bxSlider"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p12_portfolio.jpg",
+  "url": "/projects/portfolio-v2/",
+  "links": [],
+  "archived": true
+}

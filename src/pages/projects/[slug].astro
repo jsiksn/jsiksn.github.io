@@ -1,0 +1,437 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const details = await getCollection("projectDetails");
+  const projects = (await getCollection("projects", (p) => !p.data.hidden)).sort((a, b) => a.data.order - b.data.order);
+  const withDetail = projects.filter((p) => details.some((d) => d.id === p.id));
+  return withDetail.map((project, i) => ({
+    params: { slug: project.id },
+    props: {
+      project,
+      detail: details.find((d) => d.id === project.id)!,
+      prev: withDetail[i - 1] ?? null,
+      next: withDetail[i + 1] ?? null,
+      total: projects.length,
+    },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<"projects">;
+  detail: CollectionEntry<"projectDetails">;
+  prev: CollectionEntry<"projects"> | null;
+  next: CollectionEntry<"projects"> | null;
+  total: number;
+}
+
+const { project, detail, prev, next, total } = Astro.props;
+const { title, order, period, roles, stack, summary, url, links, archived, gallery = [] } = project.data;
+const { Content } = await render(detail);
+
+const [lead, ...rest] = gallery;
+const num = String(order).padStart(2, "0");
+const pageTitle = `${title} — j. sik`;
+const description = summary ?? `${title} — ${roles.join(" · ")} · ${stack.join(", ")}`;
+const ogImage = lead?.src ?? "/images/html_meta/thumbnail.png";
+
+const allLinks = [
+  { label: /github\.com/.test(url) ? "GitHub" : "바로가기", url, download: false },
+  ...links,
+];
+---
+
+<Base title={pageTitle} description={description} ogImage={ogImage} ogType="article" current="projects">
+  <article class="detail">
+    <div class="container detail__hero">
+      <a class="detail__back mono" href="/#projects">← 프로젝트로 돌아가기</a>
+
+      {
+        lead && (
+          <figure class="figure">
+            <img
+              class="figure__img"
+              src={lead.src}
+              alt={lead.caption}
+              width={lead.width}
+              height={lead.height}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <figcaption class="figure__caption">
+              <span class="figure__no mono">01</span>
+              {lead.caption}
+            </figcaption>
+          </figure>
+        )
+      }
+
+      <div class="detail__title-block">
+        <div class="detail__title">
+          <p class="eyebrow">Project {num} / {total}</p>
+          <h1 class="display detail__h1">{title}</h1>
+          {summary && <p class="detail__summary">{summary}</p>}
+        </div>
+
+        <dl class="meta">
+          {
+            period && (
+              <div class="meta__row">
+                <dt class="meta__key mono">기간</dt>
+                <dd class="meta__val">{period}</dd>
+              </div>
+            )
+          }
+          <div class="meta__row">
+            <dt class="meta__key mono">역할</dt>
+            <dd class="meta__val meta__chips">{roles.map((r) => <span class="chip">{r}</span>)}</dd>
+          </div>
+          <div class="meta__row">
+            <dt class="meta__key mono">기술</dt>
+            <dd class="meta__val meta__chips">{stack.map((s) => <span class="chip">{s}</span>)}</dd>
+          </div>
+          <div class="meta__row">
+            <dt class="meta__key mono">링크</dt>
+            <dd class="meta__val meta__links">
+              {
+                allLinks.map((l) => (
+                  <a
+                    class="btn-pill"
+                    href={l.url}
+                    target={l.download ? undefined : "_blank"}
+                    rel={l.download ? undefined : "noopener noreferrer"}
+                    download={l.download ? true : undefined}
+                  >
+                    {l.label} {l.download ? "↓" : "↗"}
+                  </a>
+                ))
+              }
+            </dd>
+          </div>
+          {
+            archived && (
+              <div class="meta__row">
+                <dt class="meta__key mono">안내</dt>
+                <dd class="meta__val muted">퍼블리싱 연습 작업물입니다. 실제 서비스가 아닙니다.</dd>
+              </div>
+            )
+          }
+        </dl>
+      </div>
+    </div>
+
+    <div class="container detail__body">
+      <div class="prose">
+        <Content />
+      </div>
+
+      {
+        rest.length > 0 && (
+          <section class="gallery" aria-labelledby="gallery-title">
+            <div class="section__title">
+              <p class="eyebrow">Figures — {gallery.length}</p>
+              <h2 class="display detail__h2" id="gallery-title">작업 화면</h2>
+            </div>
+            <ul class:list={["gallery__list", { "gallery__list--many": rest.length > 4 }]}>
+              {rest.map((g, i) => (
+                <li>
+                  <figure class="figure">
+                    <img
+                      class="figure__img"
+                      src={g.src}
+                      alt={g.caption}
+                      width={g.width}
+                      height={g.height}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption class="figure__caption">
+                      <span class="figure__no mono">{String(i + 2).padStart(2, "0")}</span>
+                      {g.caption}
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      <nav class="pager" aria-label="다른 프로젝트">
+        {
+          prev ? (
+            <a class="pager__item" href={`/projects/${prev.id}/`} rel="prev">
+              <span class="eyebrow eyebrow--muted">← Prev</span>
+              <span class="pager__name display">{prev.data.title}</span>
+            </a>
+          ) : (
+            <span />
+          )
+        }
+        {
+          next && (
+            <a class="pager__item pager__item--next" href={`/projects/${next.id}/`} rel="next">
+              <span class="eyebrow eyebrow--muted">Next →</span>
+              <span class="pager__name display">{next.data.title}</span>
+            </a>
+          )
+        }
+      </nav>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .detail__hero {
+    display: grid;
+    gap: var(--pf-space-10);
+    padding-block: var(--pf-space-4) var(--pf-space-20);
+  }
+
+  .detail__back {
+    font-size: var(--pf-text-xs);
+    letter-spacing: 0.04em;
+    color: var(--pf-color-muted);
+    justify-self: start;
+  }
+
+  .detail__back:hover {
+    color: var(--pf-color-text);
+  }
+
+  .figure {
+    display: grid;
+    gap: var(--pf-space-3);
+  }
+
+  .figure__img {
+    width: 100%;
+    aspect-ratio: var(--pf-size-gallery-ratio);
+    object-fit: cover;
+    border-radius: var(--pf-radius-md);
+    background: var(--pf-color-thumb);
+  }
+
+  .figure__caption {
+    display: flex;
+    gap: var(--pf-space-3);
+    align-items: baseline;
+    font-size: var(--pf-text-sm);
+    color: var(--pf-color-muted);
+  }
+
+  .figure__no {
+    font-size: var(--pf-text-2xs);
+    letter-spacing: 0.04em;
+    color: var(--pf-color-accent);
+  }
+
+  .detail__title-block {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
+    gap: var(--pf-space-16);
+    align-items: start;
+  }
+
+  .detail__title {
+    display: grid;
+    gap: var(--pf-space-5);
+  }
+
+  .detail__h1 {
+    font-size: var(--pf-text-5xl);
+  }
+
+  .detail__summary {
+    font-size: var(--pf-text-lg);
+    line-height: var(--pf-line-relaxed);
+    color: var(--pf-color-muted);
+    max-width: 50ch;
+  }
+
+  .meta {
+    display: grid;
+    gap: var(--pf-space-6);
+    margin: 0;
+  }
+
+  .meta__row {
+    display: grid;
+    gap: var(--pf-space-2);
+  }
+
+  .meta__key {
+    font-size: var(--pf-text-2xs);
+    letter-spacing: var(--pf-tracking-wide);
+    color: var(--pf-color-muted);
+  }
+
+  .meta__val {
+    margin: 0;
+    font-size: var(--pf-text-base);
+    line-height: var(--pf-line-relaxed);
+  }
+
+  .meta__chips,
+  .meta__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--pf-space-2);
+  }
+
+  .detail__body {
+    display: grid;
+    gap: var(--pf-space-16);
+    border-top: var(--pf-hairline) solid var(--pf-color-line);
+    padding-block: var(--pf-space-20);
+  }
+
+  /* 마크다운 본문: "## 제목"은 왼쪽 열, 그 아래 내용은 오른쪽 열 */
+  .prose {
+    display: grid;
+    grid-template-columns: minmax(0, 20rem) minmax(0, 50rem);
+    column-gap: var(--pf-space-16);
+    row-gap: var(--pf-space-4);
+    font-size: var(--pf-text-md);
+    line-height: var(--pf-line-loose);
+  }
+
+  .prose :global(h2) {
+    grid-column: 1;
+    font-family: var(--pf-font-display);
+    font-weight: var(--pf-weight-display);
+    font-size: var(--pf-text-3xl);
+    line-height: var(--pf-line-snug);
+    letter-spacing: var(--pf-tracking-snug);
+    margin-top: var(--pf-space-12);
+  }
+
+  .prose :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .prose :global(p),
+  .prose :global(ul),
+  .prose :global(ol) {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  /* 제목 바로 뒤 첫 내용도 제목과 같은 윗여백을 가져야 같은 줄에 맞는다 (margin:0 규칙보다 뒤에, 더 구체적으로) */
+  .prose :global(h2 + p),
+  .prose :global(h2 + ul),
+  .prose :global(h2 + ol) {
+    margin-top: var(--pf-space-12);
+  }
+
+  .prose :global(h2:first-child + p),
+  .prose :global(h2:first-child + ul),
+  .prose :global(h2:first-child + ol) {
+    margin-top: 0;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    display: grid;
+    gap: var(--pf-space-3);
+    padding: 0;
+  }
+
+  .prose :global(li) {
+    position: relative;
+    padding-left: var(--pf-space-5);
+  }
+
+  .prose :global(li)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.75em;
+    width: var(--pf-size-dot);
+    height: var(--pf-size-dot);
+    border-radius: var(--pf-radius-pill);
+    background: var(--pf-color-accent);
+  }
+
+  .prose :global(strong) {
+    font-weight: var(--pf-weight-semibold);
+    color: var(--pf-color-text);
+  }
+
+  .prose :global(a) {
+    color: var(--pf-color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .gallery {
+    display: grid;
+    gap: var(--pf-space-10);
+  }
+
+  .detail__h2 {
+    font-size: var(--pf-text-3xl);
+  }
+
+  .gallery__list {
+    display: grid;
+    gap: var(--pf-space-12);
+  }
+
+  .gallery__list--many {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--pf-space-10) var(--pf-space-6);
+  }
+
+  .pager {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--pf-space-8);
+    border-top: var(--pf-hairline) solid var(--pf-color-line);
+    padding-top: var(--pf-space-10);
+  }
+
+  .pager__item {
+    display: grid;
+    gap: var(--pf-space-2);
+  }
+
+  .pager__item--next {
+    text-align: right;
+    justify-items: end;
+  }
+
+  .pager__name {
+    font-size: var(--pf-text-2xl);
+    letter-spacing: var(--pf-tracking-snug);
+  }
+
+  @media (max-width: 56rem) {
+    .detail__title-block,
+    .prose {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .prose :global(h2),
+    .prose :global(p),
+    .prose :global(ul),
+    .prose :global(ol) {
+      grid-column: 1;
+    }
+    .prose :global(h2 + p),
+    .prose :global(h2 + ul),
+    .prose :global(h2 + ol) {
+      margin-top: 0;
+    }
+    .prose :global(h2) {
+      margin-top: var(--pf-space-10);
+    }
+    .prose :global(h2:first-child) {
+      margin-top: 0;
+    }
+    .gallery__list--many {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>

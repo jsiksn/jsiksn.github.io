@@ -1,0 +1,27 @@
+{
+  "slug": "vnc-website",
+  "title": "VNC",
+  "order": 9,
+  "year": null,
+  "roles": [
+    "디자인",
+    "퍼블리싱"
+  ],
+  "stack": [
+    "HTML",
+    "SCSS",
+    "fullPage",
+    "jQuery",
+    "Swiper"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p15_vnc.jpg",
+  "url": "/projects/vnc/",
+  "links": [
+    {
+      "label": "Figma",
+      "url": "https://www.figma.com/proto/oSSZAdP3hPZybTnPkP0oDM/VNC?type=design&node-id=31-353&t=Db2FPaSTpHaykd3Q-8&scaling=scale-down-width&page-id=0%3A1&hide-ui=1"
+    }
+  ],
+  "archived": true
+}

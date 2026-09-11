@@ -1,0 +1,74 @@
+---
+// 지금 사이트의 12개 항목을 5묶음으로 (FR-WK-03 — 묶음 이름은 시안에서 "(제안)"으로 제시, GATE 1에서 수용)
+const groups = [
+  { name: "마크업", items: ["HTML", "CSS", "SCSS"] },
+  { name: "스크립트", items: ["JavaScript", "TypeScript", "jQuery"] },
+  { name: "프레임워크", items: ["React", "Bootstrap"] },
+  { name: "도구", items: ["Figma", "git"] },
+  { name: "디자인", items: ["Indesign", "Keynote"] },
+];
+const total = groups.reduce((n, g) => n + g.items.length, 0);
+---
+
+<section class="section skills" id="skills" aria-labelledby="skills-title">
+  <div class="container skills__inner">
+    <div class="section__title">
+      <p class="eyebrow">Skills — {total}</p>
+      <h2 class="display h2" id="skills-title">Skills</h2>
+    </div>
+
+    <ul class="groups">
+      {
+        groups.map((g) => (
+          <li class="group">
+            <p class="group__name mono">{g.name}</p>
+            <ul class="group__chips" aria-label={g.name}>
+              {g.items.map((s) => (
+                <li>
+                  <span class="chip chip--skill">{s}</span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .skills__inner {
+    display: grid;
+    gap: var(--pf-space-10);
+  }
+
+  .groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--pf-space-8) var(--pf-space-10);
+  }
+
+  .group {
+    display: grid;
+    gap: var(--pf-space-3);
+  }
+
+  .group__name {
+    font-size: var(--pf-text-2xs);
+    letter-spacing: var(--pf-tracking-wide);
+    color: var(--pf-color-muted);
+  }
+
+  .group__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--pf-space-2);
+  }
+
+  .chip--skill {
+    font-family: var(--pf-font-body);
+    font-size: var(--pf-text-sm);
+    font-weight: var(--pf-weight-medium);
+    padding: var(--pf-space-2) var(--pf-space-4);
+  }
+</style>

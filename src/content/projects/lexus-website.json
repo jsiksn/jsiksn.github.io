@@ -1,0 +1,18 @@
+{
+  "slug": "lexus-website",
+  "title": "렉서스",
+  "order": 19,
+  "year": null,
+  "roles": [
+    "퍼블리싱"
+  ],
+  "stack": [
+    "HTML",
+    "CSS"
+  ],
+  "summary": null,
+  "thumbnail": "/images/projects/p03_lexus.jpg",
+  "url": "/projects/lexus/",
+  "links": [],
+  "archived": true
+}
