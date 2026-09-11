@@ -1,11 +1,14 @@
 ---
-// 지금 사이트의 12개 항목을 5묶음으로 (FR-WK-03 — 묶음 이름은 시안에서 "(제안)"으로 제시, GATE 1에서 수용)
+// 사용자가 2026-09-11 정리해 준 묶음. "워크플로우 자동화"는 설명이라 제외(n8n과 겹침).
+// Tailwind · Chromatic 은 사이트 안 프로젝트에 근거가 없음 — 사용자 판단으로 유지.
 const groups = [
-  { name: "마크업", items: ["HTML", "CSS", "SCSS"] },
+  { name: "마크업", items: ["HTML", "CSS", "SCSS", "Tailwind"] },
   { name: "스크립트", items: ["JavaScript", "TypeScript", "jQuery"] },
-  { name: "프레임워크", items: ["React", "Bootstrap"] },
-  { name: "도구", items: ["Figma", "git"] },
-  { name: "디자인", items: ["Indesign", "Keynote"] },
+  { name: "프레임워크", items: ["React", "Bootstrap", "Zustand"] },
+  { name: "디자인 시스템", items: ["Storybook", "Chromatic", "Figma REST API"] },
+  { name: "AI · 자동화", items: ["Claude Code (AI 페어 프로그래밍)", "MCP", "n8n"] },
+  { name: "도구", items: ["Figma", "git", "Lighthouse"] },
+  { name: "디자인", items: ["InDesign", "Illustrator", "Photoshop", "Keynote"] },
 ];
 const total = groups.reduce((n, g) => n + g.items.length, 0);
 ---
