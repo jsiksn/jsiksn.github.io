@@ -80,10 +80,14 @@ const ogImageAbs = new URL(ogImage, site).href;
   <body>
     <a class="skip-link" href="#main">본문으로 건너뛰기</a>
     <Header current={current} />
-    <main id="main">
+    <div class="top-sentinel" data-top-sentinel aria-hidden="true"></div>
+    <main id="main" tabindex="-1">
       <slot />
     </main>
     <Footer />
+    <button class="to-top btn-pill btn-pill--surface" type="button" data-to-top aria-label="맨 위로">
+      맨 위로 <span aria-hidden="true">↑</span>
+    </button>
   </body>
 </html>
 
@@ -104,4 +108,60 @@ const ogImageAbs = new URL(ogImage, site).href;
   .skip-link:focus {
     transform: none;
   }
+
+  #main:focus {
+    outline: none;
+  }
+
+  /* 첫 화면 높이만큼의 표지. 이게 화면 밖으로 나가면 "맨 위로"를 보인다 */
+  .top-sentinel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100vh;
+    pointer-events: none;
+  }
+
+  .to-top {
+    position: fixed;
+    right: var(--pf-gutter);
+    bottom: var(--pf-space-6);
+    z-index: 40;
+    backdrop-filter: blur(var(--pf-blur));
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(var(--pf-space-3));
+    transition:
+      opacity var(--pf-duration) var(--pf-ease),
+      transform var(--pf-duration) var(--pf-ease),
+      visibility 0s linear var(--pf-duration),
+      border-color var(--pf-duration) var(--pf-ease);
+  }
+
+  .to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
 </style>
+
+<script>
+  const toTop = document.querySelector<HTMLButtonElement>("[data-to-top]");
+  const sentinel = document.querySelector<HTMLElement>("[data-top-sentinel]");
+  const main = document.getElementById("main");
+
+  if (toTop && sentinel && main) {
+    // 첫 화면 높이를 지나면 보이고, 돌아오면 숨긴다
+    const io = new IntersectionObserver(([entry]) => {
+      toTop.classList.toggle("is-visible", !entry.isIntersecting);
+    });
+    io.observe(sentinel);
+
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0 }); // 부드럽게 움직일지는 html의 scroll-behavior가 정한다(움직임 줄이기 설정 존중)
+      main.focus({ preventScroll: true });
+    });
+  }
+</script>

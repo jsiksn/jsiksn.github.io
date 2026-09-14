@@ -50,16 +50,28 @@ const allLinks = [
       {
         lead && (
           <figure class="figure">
-            <img
-              class="figure__img"
-              src={lead.src}
-              alt={lead.caption}
-              width={lead.width}
-              height={lead.height}
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
+            <button
+              class="figure__zoom"
+              type="button"
+              data-zoom
+              data-src={lead.src}
+              data-caption={lead.caption}
+              data-w={lead.width}
+              data-h={lead.height}
+              aria-label={`크게 보기: ${lead.caption}`}
+            >
+              <img
+                class="figure__img"
+                src={lead.src}
+                alt={lead.caption}
+                width={lead.width}
+                height={lead.height}
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+              <span class="figure__hint mono" aria-hidden="true">크게 보기 +</span>
+            </button>
             <figcaption class="figure__caption">
               <span class="figure__no mono">01</span>
               {lead.caption}
@@ -138,15 +150,27 @@ const allLinks = [
               {rest.map((g, i) => (
                 <li>
                   <figure class="figure">
-                    <img
-                      class="figure__img"
-                      src={g.src}
-                      alt={g.caption}
-                      width={g.width}
-                      height={g.height}
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    <button
+                      class="figure__zoom"
+                      type="button"
+                      data-zoom
+                      data-src={g.src}
+                      data-caption={g.caption}
+                      data-w={g.width}
+                      data-h={g.height}
+                      aria-label={`크게 보기: ${g.caption}`}
+                    >
+                      <img
+                        class="figure__img"
+                        src={g.src}
+                        alt={g.caption}
+                        width={g.width}
+                        height={g.height}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <span class="figure__hint mono" aria-hidden="true">크게 보기 +</span>
+                    </button>
                     <figcaption class="figure__caption">
                       <span class="figure__no mono">{String(i + 2).padStart(2, "0")}</span>
                       {g.caption}
@@ -181,6 +205,31 @@ const allLinks = [
       </nav>
     </div>
   </article>
+
+  {
+    gallery.length > 0 && (
+      <dialog class="lightbox" data-lightbox aria-label="이미지 크게 보기">
+        <div class="lightbox__bar">
+          <span class="lightbox__count mono" data-lb-count />
+          <button class="btn-pill" type="button" data-lb-close>
+            닫기 <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <figure class="lightbox__figure">
+          <img class="lightbox__img" data-lb-img alt="" decoding="async" />
+          <figcaption class="lightbox__caption" data-lb-caption />
+        </figure>
+        <div class="lightbox__nav">
+          <button class="btn-pill" type="button" data-lb-prev>
+            <span aria-hidden="true">←</span> 이전
+          </button>
+          <button class="btn-pill" type="button" data-lb-next>
+            다음 <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </dialog>
+    )
+  }
 </Base>
 
 <style>
@@ -212,6 +261,33 @@ const allLinks = [
     object-fit: cover;
     border-radius: var(--pf-radius-md);
     background: var(--pf-color-thumb);
+  }
+
+  .figure__zoom {
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: var(--pf-radius-md);
+    cursor: zoom-in;
+  }
+
+  .figure__hint {
+    position: absolute;
+    right: var(--pf-space-3);
+    bottom: var(--pf-space-3);
+    padding: var(--pf-space-1) var(--pf-space-3);
+    border-radius: var(--pf-radius-pill);
+    background: var(--pf-color-scrim);
+    font-size: var(--pf-text-2xs);
+    letter-spacing: 0.04em;
+    color: var(--pf-color-text);
+    opacity: 0;
+    transition: opacity var(--pf-duration) var(--pf-ease);
+  }
+
+  .figure__zoom:hover .figure__hint,
+  .figure__zoom:focus-visible .figure__hint {
+    opacity: 1;
   }
 
   .figure__caption {
@@ -408,6 +484,70 @@ const allLinks = [
     letter-spacing: var(--pf-tracking-snug);
   }
 
+  /* ---------- 크게 보기 창 ---------- */
+  .lightbox {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: var(--pf-space-5) var(--pf-gutter) var(--pf-space-6);
+    border: 0;
+    background: transparent;
+    color: var(--pf-color-text);
+    overscroll-behavior: contain;
+  }
+
+  .lightbox[open] {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: var(--pf-space-5);
+  }
+
+  .lightbox::backdrop {
+    background: var(--pf-color-scrim);
+    backdrop-filter: blur(var(--pf-blur-strong));
+  }
+
+  .lightbox__bar,
+  .lightbox__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--pf-space-4);
+  }
+
+  .lightbox__count {
+    font-size: var(--pf-text-xs);
+    letter-spacing: 0.04em;
+    color: var(--pf-color-muted);
+  }
+
+  .lightbox__figure {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: var(--pf-space-4);
+    min-height: 0;
+  }
+
+  .lightbox__img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+    cursor: zoom-out;
+  }
+
+  .lightbox__caption {
+    text-align: center;
+    font-size: var(--pf-text-sm);
+    color: var(--pf-color-muted);
+  }
+
+  .lightbox__nav {
+    justify-content: center;
+  }
+
   @media (max-width: 56rem) {
     .detail__title-block,
     .prose {
@@ -435,3 +575,58 @@ const allLinks = [
     }
   }
 </style>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>("[data-lightbox]");
+  const zooms = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-zoom]"));
+
+  if (dialog && zooms.length > 0) {
+    const img = dialog.querySelector<HTMLImageElement>("[data-lb-img]")!;
+    const caption = dialog.querySelector<HTMLElement>("[data-lb-caption]")!;
+    const count = dialog.querySelector<HTMLElement>("[data-lb-count]")!;
+    const prev = dialog.querySelector<HTMLButtonElement>("[data-lb-prev]")!;
+    const next = dialog.querySelector<HTMLButtonElement>("[data-lb-next]")!;
+    const close = dialog.querySelector<HTMLButtonElement>("[data-lb-close]")!;
+    const pad = (n: number) => String(n).padStart(2, "0");
+    let index = 0;
+    let opener: HTMLElement | null = null;
+
+    const show = (i: number) => {
+      index = (i + zooms.length) % zooms.length;
+      const b = zooms[index];
+      img.src = b.dataset.src ?? "";
+      img.alt = b.dataset.caption ?? "";
+      img.width = Number(b.dataset.w);
+      img.height = Number(b.dataset.h);
+      caption.textContent = b.dataset.caption ?? "";
+      count.textContent = `${pad(index + 1)} / ${pad(zooms.length)}`;
+      prev.hidden = next.hidden = zooms.length < 2;
+    };
+
+    zooms.forEach((b, i) =>
+      b.addEventListener("click", () => {
+        opener = b;
+        show(i);
+        dialog.showModal();
+        close.focus();
+      }),
+    );
+    prev.addEventListener("click", () => show(index - 1));
+    next.addEventListener("click", () => show(index + 1));
+    close.addEventListener("click", () => dialog.close());
+
+    // 사진·버튼이 아닌 곳(바깥 여백)을 누르면 닫는다. Esc는 dialog가 스스로 처리한다
+    dialog.addEventListener("click", (e) => {
+      const el = e.target as HTMLElement;
+      if (el === img || !el.closest("button, figcaption")) dialog.close();
+    });
+    dialog.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") show(index - 1);
+      if (e.key === "ArrowRight") show(index + 1);
+    });
+    dialog.addEventListener("close", () => {
+      img.removeAttribute("src");
+      opener?.focus();
+    });
+  }
+</script>
